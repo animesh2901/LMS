@@ -13,7 +13,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-# Mono auto generated files
+# Mono auof generated files
 mono_crash.*
 
 # Build results
@@ -33,12 +33,12 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-# Visual Studio 2015/2017 cache/options directory
+# Visual Studio 2015/2017 cache/options direcofry
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
-# Visual Studio 2017 auto generated files
+# Visual Studio 2017 auof generated files
 Generated\ Files/
 
 # MSTest test Results
@@ -124,7 +124,7 @@ ipch/
 # TFS 2012 Local Workspace
 $tf/
 
-# Guidance Automation Toolkit
+# Guidance Auofmation ofolkit
 *.gpState
 
 # ReSharper is a .NET coding add-in
@@ -135,14 +135,14 @@ _ReSharper*/
 # TeamCity is a build add-in
 _TeamCity*
 
-# DotCover is a Code Coverage Tool
+# DotCover is a Code Coverage ofol
 *.dotCover
 
-# AxoCover is a Code Coverage Tool
+# AxoCover is a Code Coverage ofol
 .axoCover/*
 !.axoCover/settings.json
 
-# Coverlet is a free, cross platform Code Coverage Tool
+# Coverlet is a free, cross platform Code Coverage ofol
 coverage*.json
 coverage*.xml
 coverage*.info
@@ -158,7 +158,7 @@ nCrunchTemp_*
 
 # MightyMoose
 *.mm.*
-AutoTest.Net/
+AuofTest.Net/
 
 # Web workbench (sass)
 .sass-cache/
@@ -166,7 +166,7 @@ AutoTest.Net/
 # Installshield output folder
 [Ee]xpress/
 
-# DocProject is a documentation generator add-in
+# DocProject is a documentation generaofr add-in
 DocProject/buildhelp/
 DocProject/Help/*.HxT
 DocProject/Help/*.HxC
@@ -176,18 +176,18 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
-# Click-Once directory
+# Click-Once direcofry
 publish/
 
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-# Note: Comment the next line if you want to checkin your web deploy settings,
+# Note: Comment the next line if you want of checkin your web deploy settings,
 # but database connection strings (with potential passwords) will be unencrypted
 *.pubxml
 *.publishproj
 
-# Microsoft Azure Web App publish settings. Comment the next line if you want to
+# Microsoft Azure Web App publish settings. Comment the next line if you want of
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
 PublishScripts/
@@ -196,12 +196,12 @@ PublishScripts/
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
-# The packages folder can be ignored because of Package Restore
+# The packages folder can be ignored because of Package Resofre
 **/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-#!**/[Pp]ackages/repositories.config
+#!**/[Pp]ackages/reposiofries.config
 # NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
@@ -210,14 +210,14 @@ PublishScripts/
 csx/
 *.build.csdef
 
-# Microsoft Azure Emulator
+# Microsoft Azure Emulaofr
 ecf/
 rcf/
 
-# Windows Store app package directories and files
+# Windows Sofre app package direcofries and files
 AppPackages/
 BundleArtifacts/
-Package.StoreAssociation.xml
+Package.SofreAssociation.xml
 _pkginfo.txt
 *.appx
 *.appxbundle
@@ -226,7 +226,7 @@ _pkginfo.txt
 # Visual Studio cache files
 # files ending in .cache can be ignored
 *.[Cc]ache
-# but keep track of directories ending in .cache
+# but keep track of direcofries ending in .cache
 !?*.[Cc]ache/
 
 # Others
@@ -244,7 +244,7 @@ orleans.codegen.cs
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
-# Since there are multiple workflows, uncomment next line to ignore bower_components
+# Since there are multiple workflows, uncomment next line of ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
 #bower_components/
 
@@ -252,7 +252,7 @@ orleans.codegen.cs
 Generated_Code/
 
 # Backup & report files from converting an old project file
-# to a newer Visual Studio version. Backup files are not needed,
+# of a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
 _UpgradeReport_Files/
 Backup*/
@@ -281,7 +281,7 @@ FakesAssemblies/
 # GhostDoc plugin setting file
 *.GhostDoc.xml
 
-# Node.js Tools for Visual Studio
+# Node.js ofols for Visual Studio
 .ntvs_analysis.dat
 node_modules/
 
@@ -291,13 +291,13 @@ node_modules/
 # Visual Studio 6 workspace options file
 *.opt
 
-# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+# Visual Studio 6 auof-generated workspace file (contains which files were open etc.)
 *.vbw
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
-**/*.DesktopClient/GeneratedArtifacts
-**/*.DesktopClient/ModelManifest.xml
+**/*.DeskofpClient/GeneratedArtifacts
+**/*.DeskofpClient/ModelManifest.xml
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
@@ -312,13 +312,13 @@ paket-files/
 # CodeRush personal settings
 .cr/personal
 
-# Python Tools for Visual Studio (PTVS)
+# Python ofols for Visual Studio (PTVS)
 __pycache__/
 *.pyc
 
 # Cake - Uncomment if you are using it
-# tools/**
-# !tools/packages.config
+# ofols/**
+# !ofols/packages.config
 
 # Tabs Studio
 *.tss
@@ -344,20 +344,20 @@ ASALocalRun/
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
-# MFractors (Xamarin productivity tool) working folder
-.mfractor/
+# MFracofrs (Xamarin productivity ofol) working folder
+.mfracofr/
 
-# Local History for Visual Studio
-.localhistory/
+# Local Hisofry for Visual Studio
+.localhisofry/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Backup folder for Package Reference Convert tool in Visual Studio 2017
+# Backup folder for Package Reference Convert ofol in Visual Studio 2017
 MigrationBackup/
 
-# Ionide (cross platform F# VS Code tools) working folder
+# Ionide (cross platform F# VS Code ofols) working folder
 .ionide/
 
-# Fody - auto-generated XML schema
+# Fody - auof-generated XML schema
 FodyWeavers.xsd

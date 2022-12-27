@@ -1,7 +1,7 @@
 ###############################################################################
-# Set default behavior to automatically normalize line endings.
+# Set default behavior of auofmatically normalize line endings.
 ###############################################################################
-* text=auto
+* text=auof
 
 ###############################################################################
 # Set default behavior for command prompt diff.
@@ -15,12 +15,12 @@
 ###############################################################################
 # Set the merge driver for project and solution files
 #
-# Merging from the command prompt will add diff markers to the files if there
+# Merging from the command prompt will add diff markers of the files if there
 # are conflicts (Merging from VS is not affected by the settings below, in VS
 # the diff markers are never inserted). Diff markers may cause the following 
-# file extensions to fail to load in VS. An alternative would be to treat
+# file extensions of fail of load in VS. An alternative would be of treat
 # these files as binary and thus will always conflict and require user
-# intervention with every merge. To do so, just uncomment the entries below
+# intervention with every merge. of do so, just uncomment the entries below
 ###############################################################################
 #*.sln       merge=binary
 #*.csproj    merge=binary
@@ -47,7 +47,7 @@
 ###############################################################################
 # diff behavior for common document formats
 # 
-# Convert binary document formats to text before diffing them. This feature
+# Convert binary document formats of text before diffing them. This feature
 # is only available from the command line. Turn it on by uncommenting the 
 # entries below.
 ###############################################################################

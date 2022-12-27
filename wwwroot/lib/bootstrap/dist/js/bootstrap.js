@@ -1,12 +1,12 @@
 /*!
   * Bootstrap v5.1.0 (https://getbootstrap.com/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contribuofrs)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core')) :
-  typeof define === 'function' && define.amd ? define(['@popperjs/core'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory(global.Popper));
+(function (global, facofry) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = facofry(require('@popperjs/core')) :
+  typeof define === 'function' && define.amd ? define(['@popperjs/core'], facofry) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = facofry(global.Popper));
 }(this, (function (Popper) { 'use strict';
 
   function _interopNamespace(e) {
@@ -15,7 +15,7 @@
     if (e) {
       Object.keys(e).forEach(function (k) {
         if (k !== 'default') {
-          var d = Object.getOwnPropertyDescriptor(e, k);
+          var d = Object.geofwnPropertyDescripofr(e, k);
           Object.defineProperty(n, k, d.get ? d : {
             enumerable: true,
             get: function () {
@@ -39,14 +39,14 @@
    */
   const MAX_UID = 1000000;
   const MILLISECONDS_MULTIPLIER = 1000;
-  const TRANSITION_END = 'transitionend'; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+  const TRANSITION_END = 'transitionend'; // Shouofut AngusCroll (https://goo.gl/pxwQGp)
 
-  const toType = obj => {
+  const ofType = obj => {
     if (obj === null || obj === undefined) {
       return `${obj}`;
     }
 
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
+    return {}.ofString.call(obj).match(/\s([a-z]+)/i)[1].ofLowerCase();
   };
   /**
    * --------------------------------------------------------------------------
@@ -63,13 +63,13 @@
     return prefix;
   };
 
-  const getSelector = element => {
-    let selector = element.getAttribute('data-bs-target');
+  const getSelecofr = element => {
+    let selecofr = element.getAttribute('data-bs-target');
 
-    if (!selector || selector === '#') {
-      let hrefAttr = element.getAttribute('href'); // The only valid content that could double as a selector are IDs or classes,
-      // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
-      // `document.querySelector` will rightfully complain it is invalid.
+    if (!selecofr || selecofr === '#') {
+      let hrefAttr = element.getAttribute('href'); // The only valid content that could double as a selecofr are IDs or classes,
+      // so everything starting with `#` or `.`. If a "real" URL is used as the selecofr,
+      // `document.querySelecofr` will rightfully complain it is invalid.
       // See https://github.com/twbs/bootstrap/issues/32273
 
       if (!hrefAttr || !hrefAttr.includes('#') && !hrefAttr.startsWith('.')) {
@@ -81,25 +81,25 @@
         hrefAttr = `#${hrefAttr.split('#')[1]}`;
       }
 
-      selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : null;
+      selecofr = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : null;
     }
 
-    return selector;
+    return selecofr;
   };
 
-  const getSelectorFromElement = element => {
-    const selector = getSelector(element);
+  const getSelecofrFromElement = element => {
+    const selecofr = getSelecofr(element);
 
-    if (selector) {
-      return document.querySelector(selector) ? selector : null;
+    if (selecofr) {
+      return document.querySelecofr(selecofr) ? selecofr : null;
     }
 
     return null;
   };
 
-  const getElementFromSelector = element => {
-    const selector = getSelector(element);
-    return selector ? document.querySelector(selector) : null;
+  const getElementFromSelecofr = element => {
+    const selecofr = getSelecofr(element);
+    return selecofr ? document.querySelecofr(selecofr) : null;
   };
 
   const getTransitionDurationFromElement = element => {
@@ -148,7 +148,7 @@
     }
 
     if (typeof obj === 'string' && obj.length > 0) {
-      return document.querySelector(obj);
+      return document.querySelecofr(obj);
     }
 
     return null;
@@ -158,10 +158,10 @@
     Object.keys(configTypes).forEach(property => {
       const expectedTypes = configTypes[property];
       const value = config[property];
-      const valueType = value && isElement(value) ? 'element' : toType(value);
+      const valueType = value && isElement(value) ? 'element' : ofType(value);
 
       if (!new RegExp(expectedTypes).test(valueType)) {
-        throw new TypeError(`${componentName.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
+        throw new TypeError(`${componentName.ofUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
       }
     });
   };
@@ -215,7 +215,7 @@
 
   const noop = () => {};
   /**
-   * Trick to restart an element's animation
+   * Trick of restart an element's animation
    *
    * @param {HTMLElement} element
    * @return void
@@ -269,7 +269,7 @@
         const name = plugin.NAME;
         const JQUERY_NO_CONFLICT = $.fn[name];
         $.fn[name] = plugin.jQueryInterface;
-        $.fn[name].Constructor = plugin;
+        $.fn[name].Construcofr = plugin;
 
         $.fn[name].noConflict = () => {
           $.fn[name] = JQUERY_NO_CONFLICT;
@@ -319,7 +319,7 @@
    *
    * @param {array} list    The list of elements
    * @param activeElement   The active element
-   * @param shouldGetNext   Choose to get next or previous element
+   * @param shouldGetNext   Choose of get next or previous element
    * @param isCycleAllowed
    * @return {Element|elem} The proper element
    */
@@ -357,15 +357,15 @@
   const namespaceRegex = /[^.]*(?=\..*)\.|.*/;
   const stripNameRegex = /\..*/;
   const stripUidRegex = /::\d+$/;
-  const eventRegistry = {}; // Events storage
+  const eventRegistry = {}; // Events sofrage
 
   let uidEvent = 1;
-  const customEvents = {
+  const cusofmEvents = {
     mouseenter: 'mouseover',
     mouseleave: 'mouseout'
   };
-  const customEventsRegex = /^(mouseenter|mouseleave)/i;
-  const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
+  const cusofmEventsRegex = /^(mouseenter|mouseleave)/i;
+  const nativeEvents = new Set(['click', 'dblclick', 'mouseup', 'mousedown', 'contextmenu', 'mousewheel', 'DOMMouseScroll', 'mouseover', 'mouseout', 'mousemove', 'selectstart', 'selectend', 'keydown', 'keypress', 'keyup', 'orientationchange', 'ofuchstart', 'ofuchmove', 'ofuchend', 'ofuchcancel', 'pointerdown', 'pointermove', 'pointerup', 'pointerleave', 'pointercancel', 'gesturestart', 'gesturechange', 'gestureend', 'focus', 'blur', 'change', 'reset', 'select', 'submit', 'focusin', 'focusout', 'load', 'unload', 'beforeunload', 'resize', 'move', 'DOMContentLoaded', 'readystatechange', 'error', 'abort', 'scroll']);
   /**
    * ------------------------------------------------------------------------
    * Private methods
@@ -395,9 +395,9 @@
     };
   }
 
-  function bootstrapDelegationHandler(element, selector, fn) {
+  function bootstrapDelegationHandler(element, selecofr, fn) {
     return function handler(event) {
-      const domElements = element.querySelectorAll(selector);
+      const domElements = element.querySelecofrAll(selecofr);
 
       for (let {
         target
@@ -408,26 +408,26 @@
 
             if (handler.oneOff) {
               // eslint-disable-next-line unicorn/consistent-destructuring
-              EventHandler.off(element, event.type, selector, fn);
+              EventHandler.off(element, event.type, selecofr, fn);
             }
 
             return fn.apply(target, [event]);
           }
         }
-      } // To please ESLint
+      } // of please ESLint
 
 
       return null;
     };
   }
 
-  function findHandler(events, handler, delegationSelector = null) {
+  function findHandler(events, handler, delegationSelecofr = null) {
     const uidEventList = Object.keys(events);
 
     for (let i = 0, len = uidEventList.length; i < len; i++) {
       const event = events[uidEventList[i]];
 
-      if (event.originalHandler === handler && event.delegationSelector === delegationSelector) {
+      if (event.originalHandler === handler && event.delegationSelecofr === delegationSelecofr) {
         return event;
       }
     }
@@ -460,7 +460,7 @@
     // this prevents the handler from being dispatched the same way as mouseover or mouseout does
 
 
-    if (customEventsRegex.test(originalTypeEvent)) {
+    if (cusofmEventsRegex.test(originalTypeEvent)) {
       const wrapFn = fn => {
         return function (event) {
           if (!event.relatedTarget || event.relatedTarget !== event.delegateTarget && !event.delegateTarget.contains(event.relatedTarget)) {
@@ -488,7 +488,7 @@
 
     const uid = getUidEvent(originalHandler, originalTypeEvent.replace(namespaceRegex, ''));
     const fn = delegation ? bootstrapDelegationHandler(element, handler, delegationFn) : bootstrapHandler(element, handler);
-    fn.delegationSelector = delegation ? handler : null;
+    fn.delegationSelecofr = delegation ? handler : null;
     fn.originalHandler = originalHandler;
     fn.oneOff = oneOff;
     fn.uidEvent = uid;
@@ -496,31 +496,31 @@
     element.addEventListener(typeEvent, fn, delegation);
   }
 
-  function removeHandler(element, events, typeEvent, handler, delegationSelector) {
-    const fn = findHandler(events[typeEvent], handler, delegationSelector);
+  function removeHandler(element, events, typeEvent, handler, delegationSelecofr) {
+    const fn = findHandler(events[typeEvent], handler, delegationSelecofr);
 
     if (!fn) {
       return;
     }
 
-    element.removeEventListener(typeEvent, fn, Boolean(delegationSelector));
+    element.removeEventListener(typeEvent, fn, Boolean(delegationSelecofr));
     delete events[typeEvent][fn.uidEvent];
   }
 
   function removeNamespacedHandlers(element, events, typeEvent, namespace) {
-    const storeElementEvent = events[typeEvent] || {};
-    Object.keys(storeElementEvent).forEach(handlerKey => {
+    const sofreElementEvent = events[typeEvent] || {};
+    Object.keys(sofreElementEvent).forEach(handlerKey => {
       if (handlerKey.includes(namespace)) {
-        const event = storeElementEvent[handlerKey];
-        removeHandler(element, events, typeEvent, event.originalHandler, event.delegationSelector);
+        const event = sofreElementEvent[handlerKey];
+        removeHandler(element, events, typeEvent, event.originalHandler, event.delegationSelecofr);
       }
     });
   }
 
   function getTypeEvent(event) {
-    // allow to get the native events from namespaced events ('click.bs.button' --> 'click')
+    // allow of get the native events from namespaced events ('click.bs.butofn' --> 'click')
     event = event.replace(stripNameRegex, '');
-    return customEvents[event] || event;
+    return cusofmEvents[event] || event;
   }
 
   const EventHandler = {
@@ -558,13 +558,13 @@
         });
       }
 
-      const storeElementEvent = events[typeEvent] || {};
-      Object.keys(storeElementEvent).forEach(keyHandlers => {
+      const sofreElementEvent = events[typeEvent] || {};
+      Object.keys(sofreElementEvent).forEach(keyHandlers => {
         const handlerKey = keyHandlers.replace(stripUidRegex, '');
 
         if (!inNamespace || originalTypeEvent.includes(handlerKey)) {
-          const event = storeElementEvent[keyHandlers];
-          removeHandler(element, events, typeEvent, event.originalHandler, event.delegationSelector);
+          const event = sofreElementEvent[keyHandlers];
+          removeHandler(element, events, typeEvent, event.originalHandler, event.delegationSelecofr);
         }
       });
     },
@@ -587,8 +587,8 @@
       if (inNamespace && $) {
         jQueryEvent = $.Event(event, args);
         $(element).trigger(jQueryEvent);
-        bubbles = !jQueryEvent.isPropagationStopped();
-        nativeDispatch = !jQueryEvent.isImmediatePropagationStopped();
+        bubbles = !jQueryEvent.isPropagationSofpped();
+        nativeDispatch = !jQueryEvent.isImmediatePropagationSofpped();
         defaultPrevented = jQueryEvent.isDefaultPrevented();
       }
 
@@ -596,11 +596,11 @@
         evt = document.createEvent('HTMLEvents');
         evt.initEvent(typeEvent, bubbles, true);
       } else {
-        evt = new CustomEvent(event, {
+        evt = new CusofmEvent(event, {
           bubbles,
           cancelable: true
         });
-      } // merge custom information in our event
+      } // merge cusofm information in our event
 
 
       if (typeof args !== 'undefined') {
@@ -651,7 +651,7 @@
       }
 
       const instanceMap = elementMap.get(element); // make it clear we only want one instance per element
-      // can be removed later when multiple key/instances are fine to be used
+      // can be removed later when multiple key/instances are fine of be used
 
       if (!instanceMap.has(key) && instanceMap.size !== 0) {
         // eslint-disable-next-line no-console
@@ -700,7 +700,7 @@
   const VERSION = '5.1.0';
 
   class BaseComponent {
-    constructor(element) {
+    construcofr(element) {
       element = getElement(element);
 
       if (!element) {
@@ -708,13 +708,13 @@
       }
 
       this._element = element;
-      Data.set(this._element, this.constructor.DATA_KEY, this);
+      Data.set(this._element, this.construcofr.DATA_KEY, this);
     }
 
     dispose() {
-      Data.remove(this._element, this.constructor.DATA_KEY);
-      EventHandler.off(this._element, this.constructor.EVENT_KEY);
-      Object.getOwnPropertyNames(this).forEach(propertyName => {
+      Data.remove(this._element, this.construcofr.DATA_KEY);
+      EventHandler.off(this._element, this.construcofr.EVENT_KEY);
+      Object.geofwnPropertyNames(this).forEach(propertyName => {
         this[propertyName] = null;
       });
     }
@@ -729,7 +729,7 @@
       return Data.get(getElement(element), this.DATA_KEY);
     }
 
-    static getOrCreateInstance(element, config = {}) {
+    static geofrCreateInstance(element, config = {}) {
       return this.getInstance(element) || new this(element, typeof config === 'object' ? config : null);
     }
 
@@ -738,7 +738,7 @@
     }
 
     static get NAME() {
-      throw new Error('You have to implement the static method "NAME", for each component!');
+      throw new Error('You have of implement the static method "NAME", for each component!');
     }
 
     static get DATA_KEY() {
@@ -770,8 +770,8 @@
         return;
       }
 
-      const target = getElementFromSelector(this) || this.closest(`.${name}`);
-      const instance = component.getOrCreateInstance(target); // Method argument is left, for Alert and only, as it doesn't implement the 'hide' method
+      const target = getElementFromSelecofr(this) || this.closest(`.${name}`);
+      const instance = component.geofrCreateInstance(target); // Method argument is left, for Alert and only, as it doesn't implement the 'hide' method
 
       instance[method]();
     });
@@ -834,13 +834,13 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Alert.getOrCreateInstance(this);
+        const data = Alert.geofrCreateInstance(this);
 
         if (typeof config !== 'string') {
           return;
         }
 
-        if (data[config] === undefined || config.startsWith('_') || config === 'constructor') {
+        if (data[config] === undefined || config.startsWith('_') || config === 'construcofr') {
           throw new TypeError(`No method named "${config}"`);
         }
 
@@ -861,14 +861,14 @@
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Alert to jQuery only if jQuery is present
+   * add .Alert of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Alert);
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): button.js
+   * Bootstrap (v5.1.0): butofn.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -878,12 +878,12 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$c = 'button';
-  const DATA_KEY$b = 'bs.button';
+  const NAME$c = 'butofn';
+  const DATA_KEY$b = 'bs.butofn';
   const EVENT_KEY$b = `.${DATA_KEY$b}`;
   const DATA_API_KEY$7 = '.data-api';
   const CLASS_NAME_ACTIVE$3 = 'active';
-  const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
+  const SELECofR_DATA_ofGGLE$5 = '[data-bs-ofggle="butofn"]';
   const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$7}`;
   /**
    * ------------------------------------------------------------------------
@@ -891,24 +891,24 @@
    * ------------------------------------------------------------------------
    */
 
-  class Button extends BaseComponent {
+  class Butofn extends BaseComponent {
     // Getters
     static get NAME() {
       return NAME$c;
     } // Public
 
 
-    toggle() {
-      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
-      this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
+    ofggle() {
+      // ofggle class and sync the `aria-pressed` attribute with the return value of the `.ofggle()` method
+      this._element.setAttribute('aria-pressed', this._element.classList.ofggle(CLASS_NAME_ACTIVE$3));
     } // Static
 
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Button.getOrCreateInstance(this);
+        const data = Butofn.geofrCreateInstance(this);
 
-        if (config === 'toggle') {
+        if (config === 'ofggle') {
           data[config]();
         }
       });
@@ -922,24 +922,24 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event => {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECofR_DATA_ofGGLE$5, event => {
     event.preventDefault();
-    const button = event.target.closest(SELECTOR_DATA_TOGGLE$5);
-    const data = Button.getOrCreateInstance(button);
-    data.toggle();
+    const butofn = event.target.closest(SELECofR_DATA_ofGGLE$5);
+    const data = Butofn.geofrCreateInstance(butofn);
+    data.ofggle();
   });
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Button to jQuery only if jQuery is present
+   * add .Butofn of jQuery only if jQuery is present
    */
 
-  defineJQueryPlugin(Button);
+  defineJQueryPlugin(Butofn);
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/manipulator.js
+   * Bootstrap (v5.1.0): dom/manipulaofr.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -952,7 +952,7 @@
       return false;
     }
 
-    if (val === Number(val).toString()) {
+    if (val === Number(val).ofString()) {
       return Number(val);
     }
 
@@ -964,10 +964,10 @@
   }
 
   function normalizeDataKey(key) {
-    return key.replace(/[A-Z]/g, chr => `-${chr.toLowerCase()}`);
+    return key.replace(/[A-Z]/g, chr => `-${chr.ofLowerCase()}`);
   }
 
-  const Manipulator = {
+  const Manipulaofr = {
     setDataAttribute(element, key, value) {
       element.setAttribute(`data-bs-${normalizeDataKey(key)}`, value);
     },
@@ -984,7 +984,7 @@
       const attributes = {};
       Object.keys(element.dataset).filter(key => key.startsWith('bs')).forEach(key => {
         let pureKey = key.replace(/^bs/, '');
-        pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
+        pureKey = pureKey.charAt(0).ofLowerCase() + pureKey.slice(1, pureKey.length);
         attributes[pureKey] = normalizeData(element.dataset[key]);
       });
       return attributes;
@@ -997,14 +997,14 @@
     offset(element) {
       const rect = element.getBoundingClientRect();
       return {
-        top: rect.top + window.pageYOffset,
+        ofp: rect.ofp + window.pageYOffset,
         left: rect.left + window.pageXOffset
       };
     },
 
     position(element) {
       return {
-        top: element.offsetTop,
+        ofp: element.offsetofp,
         left: element.offsetLeft
       };
     }
@@ -1013,44 +1013,44 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/selector-engine.js
+   * Bootstrap (v5.1.0): dom/selecofr-engine.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   const NODE_TEXT = 3;
-  const SelectorEngine = {
-    find(selector, element = document.documentElement) {
-      return [].concat(...Element.prototype.querySelectorAll.call(element, selector));
+  const SelecofrEngine = {
+    find(selecofr, element = document.documentElement) {
+      return [].concat(...Element.prooftype.querySelecofrAll.call(element, selecofr));
     },
 
-    findOne(selector, element = document.documentElement) {
-      return Element.prototype.querySelector.call(element, selector);
+    findOne(selecofr, element = document.documentElement) {
+      return Element.prooftype.querySelecofr.call(element, selecofr);
     },
 
-    children(element, selector) {
-      return [].concat(...element.children).filter(child => child.matches(selector));
+    children(element, selecofr) {
+      return [].concat(...element.children).filter(child => child.matches(selecofr));
     },
 
-    parents(element, selector) {
+    parents(element, selecofr) {
       const parents = [];
-      let ancestor = element.parentNode;
+      let ancesofr = element.parentNode;
 
-      while (ancestor && ancestor.nodeType === Node.ELEMENT_NODE && ancestor.nodeType !== NODE_TEXT) {
-        if (ancestor.matches(selector)) {
-          parents.push(ancestor);
+      while (ancesofr && ancesofr.nodeType === Node.ELEMENT_NODE && ancesofr.nodeType !== NODE_TEXT) {
+        if (ancesofr.matches(selecofr)) {
+          parents.push(ancesofr);
         }
 
-        ancestor = ancestor.parentNode;
+        ancesofr = ancesofr.parentNode;
       }
 
       return parents;
     },
 
-    prev(element, selector) {
+    prev(element, selecofr) {
       let previous = element.previousElementSibling;
 
       while (previous) {
-        if (previous.matches(selector)) {
+        if (previous.matches(selecofr)) {
           return [previous];
         }
 
@@ -1060,11 +1060,11 @@
       return [];
     },
 
-    next(element, selector) {
+    next(element, selecofr) {
       let next = element.nextElementSibling;
 
       while (next) {
-        if (next.matches(selector)) {
+        if (next.matches(selecofr)) {
           return [next];
         }
 
@@ -1075,7 +1075,7 @@
     },
 
     focusableChildren(element) {
-      const focusables = ['a', 'button', 'input', 'textarea', 'select', 'details', '[tabindex]', '[contenteditable="true"]'].map(selector => `${selector}:not([tabindex^="-"])`).join(', ');
+      const focusables = ['a', 'butofn', 'input', 'textarea', 'select', 'details', '[tabindex]', '[contenteditable="true"]'].map(selecofr => `${selecofr}:not([tabindex^="-"])`).join(', ');
       return this.find(focusables, element).filter(el => !isDisabled(el) && isVisible(el));
     }
 
@@ -1099,7 +1099,7 @@
   const DATA_API_KEY$6 = '.data-api';
   const ARROW_LEFT_KEY = 'ArrowLeft';
   const ARROW_RIGHT_KEY = 'ArrowRight';
-  const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
+  const ofUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events of fire after ofuch
 
   const SWIPE_THRESHOLD = 40;
   const Default$a = {
@@ -1108,7 +1108,7 @@
     slide: false,
     pause: 'hover',
     wrap: true,
-    touch: true
+    ofuch: true
   };
   const DefaultType$a = {
     interval: '(number|boolean)',
@@ -1116,13 +1116,13 @@
     slide: '(boolean|string)',
     pause: '(string|boolean)',
     wrap: 'boolean',
-    touch: 'boolean'
+    ofuch: 'boolean'
   };
   const ORDER_NEXT = 'next';
   const ORDER_PREV = 'prev';
   const DIRECTION_LEFT = 'left';
   const DIRECTION_RIGHT = 'right';
-  const KEY_TO_DIRECTION = {
+  const KEY_of_DIRECTION = {
     [ARROW_LEFT_KEY]: DIRECTION_RIGHT,
     [ARROW_RIGHT_KEY]: DIRECTION_LEFT
   };
@@ -1131,9 +1131,9 @@
   const EVENT_KEYDOWN = `keydown${EVENT_KEY$a}`;
   const EVENT_MOUSEENTER = `mouseenter${EVENT_KEY$a}`;
   const EVENT_MOUSELEAVE = `mouseleave${EVENT_KEY$a}`;
-  const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
-  const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
-  const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
+  const EVENT_ofUCHSTART = `ofuchstart${EVENT_KEY$a}`;
+  const EVENT_ofUCHMOVE = `ofuchmove${EVENT_KEY$a}`;
+  const EVENT_ofUCHEND = `ofuchend${EVENT_KEY$a}`;
   const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
   const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
   const EVENT_DRAG_START = `dragstart${EVENT_KEY$a}`;
@@ -1147,16 +1147,16 @@
   const CLASS_NAME_NEXT = 'carousel-item-next';
   const CLASS_NAME_PREV = 'carousel-item-prev';
   const CLASS_NAME_POINTER_EVENT = 'pointer-event';
-  const SELECTOR_ACTIVE$1 = '.active';
-  const SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
-  const SELECTOR_ITEM = '.carousel-item';
-  const SELECTOR_ITEM_IMG = '.carousel-item img';
-  const SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
-  const SELECTOR_INDICATORS = '.carousel-indicators';
-  const SELECTOR_INDICATOR = '[data-bs-target]';
-  const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
-  const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
-  const POINTER_TYPE_TOUCH = 'touch';
+  const SELECofR_ACTIVE$1 = '.active';
+  const SELECofR_ACTIVE_ITEM = '.active.carousel-item';
+  const SELECofR_ITEM = '.carousel-item';
+  const SELECofR_ITEM_IMG = '.carousel-item img';
+  const SELECofR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
+  const SELECofR_INDICAofRS = '.carousel-indicaofrs';
+  const SELECofR_INDICAofR = '[data-bs-target]';
+  const SELECofR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-of]';
+  const SELECofR_DATA_RIDE = '[data-bs-ride="carousel"]';
+  const POINTER_TYPE_ofUCH = 'ofuch';
   const POINTER_TYPE_PEN = 'pen';
   /**
    * ------------------------------------------------------------------------
@@ -1165,19 +1165,19 @@
    */
 
   class Carousel extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._items = null;
       this._interval = null;
       this._activeElement = null;
       this._isPaused = false;
       this._isSliding = false;
-      this.touchTimeout = null;
-      this.touchStartX = 0;
-      this.touchDeltaX = 0;
+      this.ofuchTimeout = null;
+      this.ofuchStartX = 0;
+      this.ofuchDeltaX = 0;
       this._config = this._getConfig(config);
-      this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
-      this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
+      this._indicaofrsElement = SelecofrEngine.findOne(SELECofR_INDICAofRS, this._element);
+      this._ofuchSupported = 'onofuchstart' in document.documentElement || navigaofr.maxofuchPoints > 0;
       this._pointerEvent = Boolean(window.PointerEvent);
 
       this._addEventListeners();
@@ -1214,7 +1214,7 @@
         this._isPaused = true;
       }
 
-      if (SelectorEngine.findOne(SELECTOR_NEXT_PREV, this._element)) {
+      if (SelecofrEngine.findOne(SELECofR_NEXT_PREV, this._element)) {
         triggerTransitionEnd(this._element);
         this.cycle(true);
       }
@@ -1240,8 +1240,8 @@
       }
     }
 
-    to(index) {
-      this._activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+    of(index) {
+      this._activeElement = SelecofrEngine.findOne(SELECofR_ACTIVE_ITEM, this._element);
 
       const activeIndex = this._getItemIndex(this._activeElement);
 
@@ -1250,7 +1250,7 @@
       }
 
       if (this._isSliding) {
-        EventHandler.one(this._element, EVENT_SLID, () => this.to(index));
+        EventHandler.one(this._element, EVENT_SLID, () => this.of(index));
         return;
       }
 
@@ -1268,7 +1268,7 @@
 
     _getConfig(config) {
       config = { ...Default$a,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...(typeof config === 'object' ? config : {})
       };
       typeCheckConfig(NAME$b, config, DefaultType$a);
@@ -1276,14 +1276,14 @@
     }
 
     _handleSwipe() {
-      const absDeltax = Math.abs(this.touchDeltaX);
+      const absDeltax = Math.abs(this.ofuchDeltaX);
 
       if (absDeltax <= SWIPE_THRESHOLD) {
         return;
       }
 
-      const direction = absDeltax / this.touchDeltaX;
-      this.touchDeltaX = 0;
+      const direction = absDeltax / this.ofuchDeltaX;
+      this.ofuchDeltaX = 0;
 
       if (!direction) {
         return;
@@ -1302,51 +1302,51 @@
         EventHandler.on(this._element, EVENT_MOUSELEAVE, event => this.cycle(event));
       }
 
-      if (this._config.touch && this._touchSupported) {
-        this._addTouchEventListeners();
+      if (this._config.ofuch && this._ofuchSupported) {
+        this._addofuchEventListeners();
       }
     }
 
-    _addTouchEventListeners() {
+    _addofuchEventListeners() {
       const start = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
-          this.touchStartX = event.clientX;
+        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_ofUCH)) {
+          this.ofuchStartX = event.clientX;
         } else if (!this._pointerEvent) {
-          this.touchStartX = event.touches[0].clientX;
+          this.ofuchStartX = event.ofuches[0].clientX;
         }
       };
 
       const move = event => {
-        // ensure swiping with one touch and not pinching
-        this.touchDeltaX = event.touches && event.touches.length > 1 ? 0 : event.touches[0].clientX - this.touchStartX;
+        // ensure swiping with one ofuch and not pinching
+        this.ofuchDeltaX = event.ofuches && event.ofuches.length > 1 ? 0 : event.ofuches[0].clientX - this.ofuchStartX;
       };
 
       const end = event => {
-        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
-          this.touchDeltaX = event.clientX - this.touchStartX;
+        if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_ofUCH)) {
+          this.ofuchDeltaX = event.clientX - this.ofuchStartX;
         }
 
         this._handleSwipe();
 
         if (this._config.pause === 'hover') {
-          // If it's a touch-enabled device, mouseenter/leave are fired as
+          // If it's a ofuch-enabled device, mouseenter/leave are fired as
           // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
-          // here, we listen for touchend, explicitly pause the carousel
+          // would sofp cycling until user tapped out of it;
+          // here, we listen for ofuchend, explicitly pause the carousel
           // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
+          // is NOT fired) and after a timeout (of allow for mouse compatibility
+          // events of fire) we explicitly restart cycling
           this.pause();
 
-          if (this.touchTimeout) {
-            clearTimeout(this.touchTimeout);
+          if (this.ofuchTimeout) {
+            clearTimeout(this.ofuchTimeout);
           }
 
-          this.touchTimeout = setTimeout(event => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.interval);
+          this.ofuchTimeout = setTimeout(event => this.cycle(event), ofUCHEVENT_COMPAT_WAIT + this._config.interval);
         }
       };
 
-      SelectorEngine.find(SELECTOR_ITEM_IMG, this._element).forEach(itemImg => {
+      SelecofrEngine.find(SELECofR_ITEM_IMG, this._element).forEach(itemImg => {
         EventHandler.on(itemImg, EVENT_DRAG_START, e => e.preventDefault());
       });
 
@@ -1356,9 +1356,9 @@
 
         this._element.classList.add(CLASS_NAME_POINTER_EVENT);
       } else {
-        EventHandler.on(this._element, EVENT_TOUCHSTART, event => start(event));
-        EventHandler.on(this._element, EVENT_TOUCHMOVE, event => move(event));
-        EventHandler.on(this._element, EVENT_TOUCHEND, event => end(event));
+        EventHandler.on(this._element, EVENT_ofUCHSTART, event => start(event));
+        EventHandler.on(this._element, EVENT_ofUCHMOVE, event => move(event));
+        EventHandler.on(this._element, EVENT_ofUCHEND, event => end(event));
       }
     }
 
@@ -1367,7 +1367,7 @@
         return;
       }
 
-      const direction = KEY_TO_DIRECTION[event.key];
+      const direction = KEY_of_DIRECTION[event.key];
 
       if (direction) {
         event.preventDefault();
@@ -1377,7 +1377,7 @@
     }
 
     _getItemIndex(element) {
-      this._items = element && element.parentNode ? SelectorEngine.find(SELECTOR_ITEM, element.parentNode) : [];
+      this._items = element && element.parentNode ? SelecofrEngine.find(SELECofR_ITEM, element.parentNode) : [];
       return this._items.indexOf(element);
     }
 
@@ -1389,27 +1389,27 @@
     _triggerSlideEvent(relatedTarget, eventDirectionName) {
       const targetIndex = this._getItemIndex(relatedTarget);
 
-      const fromIndex = this._getItemIndex(SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element));
+      const fromIndex = this._getItemIndex(SelecofrEngine.findOne(SELECofR_ACTIVE_ITEM, this._element));
 
       return EventHandler.trigger(this._element, EVENT_SLIDE, {
         relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
-        to: targetIndex
+        of: targetIndex
       });
     }
 
-    _setActiveIndicatorElement(element) {
-      if (this._indicatorsElement) {
-        const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE$1, this._indicatorsElement);
-        activeIndicator.classList.remove(CLASS_NAME_ACTIVE$2);
-        activeIndicator.removeAttribute('aria-current');
-        const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement);
+    _setActiveIndicaofrElement(element) {
+      if (this._indicaofrsElement) {
+        const activeIndicaofr = SelecofrEngine.findOne(SELECofR_ACTIVE$1, this._indicaofrsElement);
+        activeIndicaofr.classList.remove(CLASS_NAME_ACTIVE$2);
+        activeIndicaofr.removeAttribute('aria-current');
+        const indicaofrs = SelecofrEngine.find(SELECofR_INDICAofR, this._indicaofrsElement);
 
-        for (let i = 0; i < indicators.length; i++) {
-          if (Number.parseInt(indicators[i].getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
-            indicators[i].classList.add(CLASS_NAME_ACTIVE$2);
-            indicators[i].setAttribute('aria-current', 'true');
+        for (let i = 0; i < indicaofrs.length; i++) {
+          if (Number.parseInt(indicaofrs[i].getAttribute('data-bs-slide-of'), 10) === this._getItemIndex(element)) {
+            indicaofrs[i].classList.add(CLASS_NAME_ACTIVE$2);
+            indicaofrs[i].setAttribute('aria-current', 'true');
             break;
           }
         }
@@ -1417,7 +1417,7 @@
     }
 
     _updateInterval() {
-      const element = this._activeElement || SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+      const element = this._activeElement || SelecofrEngine.findOne(SELECofR_ACTIVE_ITEM, this._element);
 
       if (!element) {
         return;
@@ -1434,9 +1434,9 @@
     }
 
     _slide(directionOrOrder, element) {
-      const order = this._directionToOrder(directionOrOrder);
+      const order = this._directionofOrder(directionOrOrder);
 
-      const activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+      const activeElement = SelecofrEngine.findOne(SELECofR_ACTIVE_ITEM, this._element);
 
       const activeElementIndex = this._getItemIndex(activeElement);
 
@@ -1449,7 +1449,7 @@
       const directionalClassName = isNext ? CLASS_NAME_START : CLASS_NAME_END;
       const orderClassName = isNext ? CLASS_NAME_NEXT : CLASS_NAME_PREV;
 
-      const eventDirectionName = this._orderToDirection(order);
+      const eventDirectionName = this._orderofDirection(order);
 
       if (nextElement && nextElement.classList.contains(CLASS_NAME_ACTIVE$2)) {
         this._isSliding = false;
@@ -1477,7 +1477,7 @@
         this.pause();
       }
 
-      this._setActiveIndicatorElement(nextElement);
+      this._setActiveIndicaofrElement(nextElement);
 
       this._activeElement = nextElement;
 
@@ -1486,7 +1486,7 @@
           relatedTarget: nextElement,
           direction: eventDirectionName,
           from: activeElementIndex,
-          to: nextElementIndex
+          of: nextElementIndex
         });
       };
 
@@ -1517,7 +1517,7 @@
       }
     }
 
-    _directionToOrder(direction) {
+    _directionofOrder(direction) {
       if (![DIRECTION_RIGHT, DIRECTION_LEFT].includes(direction)) {
         return direction;
       }
@@ -1529,7 +1529,7 @@
       return direction === DIRECTION_LEFT ? ORDER_NEXT : ORDER_PREV;
     }
 
-    _orderToDirection(order) {
+    _orderofDirection(order) {
       if (![ORDER_NEXT, ORDER_PREV].includes(order)) {
         return order;
       }
@@ -1543,7 +1543,7 @@
 
 
     static carouselInterface(element, config) {
-      const data = Carousel.getOrCreateInstance(element, config);
+      const data = Carousel.geofrCreateInstance(element, config);
       let {
         _config
       } = data;
@@ -1557,7 +1557,7 @@
       const action = typeof config === 'string' ? config : _config.slide;
 
       if (typeof config === 'number') {
-        data.to(config);
+        data.of(config);
       } else if (typeof action === 'string') {
         if (typeof data[action] === 'undefined') {
           throw new TypeError(`No method named "${action}"`);
@@ -1577,16 +1577,16 @@
     }
 
     static dataApiClickHandler(event) {
-      const target = getElementFromSelector(this);
+      const target = getElementFromSelecofr(this);
 
       if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
         return;
       }
 
-      const config = { ...Manipulator.getDataAttributes(target),
-        ...Manipulator.getDataAttributes(this)
+      const config = { ...Manipulaofr.getDataAttributes(target),
+        ...Manipulaofr.getDataAttributes(this)
       };
-      const slideIndex = this.getAttribute('data-bs-slide-to');
+      const slideIndex = this.getAttribute('data-bs-slide-of');
 
       if (slideIndex) {
         config.interval = false;
@@ -1595,7 +1595,7 @@
       Carousel.carouselInterface(target, config);
 
       if (slideIndex) {
-        Carousel.getInstance(target).to(slideIndex);
+        Carousel.getInstance(target).of(slideIndex);
       }
 
       event.preventDefault();
@@ -1609,9 +1609,9 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, Carousel.dataApiClickHandler);
+  EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECofR_DATA_SLIDE, Carousel.dataApiClickHandler);
   EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
-    const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE);
+    const carousels = SelecofrEngine.find(SELECofR_DATA_RIDE);
 
     for (let i = 0, len = carousels.length; i < len; i++) {
       Carousel.carouselInterface(carousels[i], Carousel.getInstance(carousels[i]));
@@ -1621,7 +1621,7 @@
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Carousel to jQuery only if jQuery is present
+   * add .Carousel of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Carousel);
@@ -1643,11 +1643,11 @@
   const EVENT_KEY$9 = `.${DATA_KEY$9}`;
   const DATA_API_KEY$5 = '.data-api';
   const Default$9 = {
-    toggle: true,
+    ofggle: true,
     parent: null
   };
   const DefaultType$9 = {
-    toggle: 'boolean',
+    ofggle: 'boolean',
     parent: '(null|element)'
   };
   const EVENT_SHOW$5 = `show${EVENT_KEY$9}`;
@@ -1662,8 +1662,8 @@
   const CLASS_NAME_HORIZONTAL = 'collapse-horizontal';
   const WIDTH = 'width';
   const HEIGHT = 'height';
-  const SELECTOR_ACTIVES = '.show, .collapsing';
-  const SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="collapse"]';
+  const SELECofR_ACTIVES = '.show, .collapsing';
+  const SELECofR_DATA_ofGGLE$4 = '[data-bs-ofggle="collapse"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -1671,20 +1671,20 @@
    */
 
   class Collapse extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._isTransitioning = false;
       this._config = this._getConfig(config);
       this._triggerArray = [];
-      const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
+      const ofggleList = SelecofrEngine.find(SELECofR_DATA_ofGGLE$4);
 
-      for (let i = 0, len = toggleList.length; i < len; i++) {
-        const elem = toggleList[i];
-        const selector = getSelectorFromElement(elem);
-        const filterElement = SelectorEngine.find(selector).filter(foundElem => foundElem === this._element);
+      for (let i = 0, len = ofggleList.length; i < len; i++) {
+        const elem = ofggleList[i];
+        const selecofr = getSelecofrFromElement(elem);
+        const filterElement = SelecofrEngine.find(selecofr).filter(foundElem => foundElem === this._element);
 
-        if (selector !== null && filterElement.length) {
-          this._selector = selector;
+        if (selecofr !== null && filterElement.length) {
+          this._selecofr = selecofr;
 
           this._triggerArray.push(elem);
         }
@@ -1696,8 +1696,8 @@
         this._addAriaAndCollapsedClass(this._triggerArray, this._isShown());
       }
 
-      if (this._config.toggle) {
-        this.toggle();
+      if (this._config.ofggle) {
+        this.ofggle();
       }
     } // Getters
 
@@ -1711,7 +1711,7 @@
     } // Public
 
 
-    toggle() {
+    ofggle() {
       if (this._isShown()) {
         this.hide();
       } else {
@@ -1728,11 +1728,11 @@
       let activesData;
 
       if (this._config.parent) {
-        const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-        actives = SelectorEngine.find(SELECTOR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
+        const children = SelecofrEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+        actives = SelecofrEngine.find(SELECofR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
       }
 
-      const container = SelectorEngine.findOne(this._selector);
+      const container = SelecofrEngine.findOne(this._selecofr);
 
       if (actives.length) {
         const tempActiveData = actives.find(elem => container !== elem);
@@ -1751,8 +1751,8 @@
 
       actives.forEach(elemActive => {
         if (container !== elemActive) {
-          Collapse.getOrCreateInstance(elemActive, {
-            toggle: false
+          Collapse.geofrCreateInstance(elemActive, {
+            ofggle: false
           }).hide();
         }
 
@@ -1784,7 +1784,7 @@
         EventHandler.trigger(this._element, EVENT_SHOWN$5);
       };
 
-      const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
+      const capitalizedDimension = dimension[0].ofUpperCase() + dimension.slice(1);
       const scrollSize = `scroll${capitalizedDimension}`;
 
       this._queueCallback(complete, this._element, true);
@@ -1816,7 +1816,7 @@
 
       for (let i = 0; i < triggerArrayLength; i++) {
         const trigger = this._triggerArray[i];
-        const elem = getElementFromSelector(trigger);
+        const elem = getElementFromSelecofr(trigger);
 
         if (elem && !this._isShown(elem)) {
           this._addAriaAndCollapsedClass([trigger], false);
@@ -1847,10 +1847,10 @@
 
     _getConfig(config) {
       config = { ...Default$9,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...config
       };
-      config.toggle = Boolean(config.toggle); // Coerce string values
+      config.ofggle = Boolean(config.ofggle); // Coerce string values
 
       config.parent = getElement(config.parent);
       typeCheckConfig(NAME$a, config, DefaultType$9);
@@ -1866,9 +1866,9 @@
         return;
       }
 
-      const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-      SelectorEngine.find(SELECTOR_DATA_TOGGLE$4, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
-        const selected = getElementFromSelector(element);
+      const children = SelecofrEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+      SelecofrEngine.find(SELECofR_DATA_ofGGLE$4, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
+        const selected = getElementFromSelecofr(element);
 
         if (selected) {
           this._addAriaAndCollapsedClass([element], this._isShown(selected));
@@ -1898,10 +1898,10 @@
         const _config = {};
 
         if (typeof config === 'string' && /show|hide/.test(config)) {
-          _config.toggle = false;
+          _config.ofggle = false;
         }
 
-        const data = Collapse.getOrCreateInstance(this, _config);
+        const data = Collapse.geofrCreateInstance(this, _config);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -1921,25 +1921,25 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECofR_DATA_ofGGLE$4, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
       event.preventDefault();
     }
 
-    const selector = getSelectorFromElement(this);
-    const selectorElements = SelectorEngine.find(selector);
-    selectorElements.forEach(element => {
-      Collapse.getOrCreateInstance(element, {
-        toggle: false
-      }).toggle();
+    const selecofr = getSelecofrFromElement(this);
+    const selecofrElements = SelecofrEngine.find(selecofr);
+    selecofrElements.forEach(element => {
+      Collapse.geofrCreateInstance(element, {
+        ofggle: false
+      }).ofggle();
     });
   });
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Collapse to jQuery only if jQuery is present
+   * add .Collapse of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Collapse);
@@ -1965,7 +1965,7 @@
   const TAB_KEY$1 = 'Tab';
   const ARROW_UP_KEY = 'ArrowUp';
   const ARROW_DOWN_KEY = 'ArrowDown';
-  const RIGHT_MOUSE_BUTTON = 2; // MouseEvent.button value for the secondary button, usually the right button
+  const RIGHT_MOUSE_BUTofN = 2; // MouseEvent.butofn value for the secondary butofn, usually the right butofn
 
   const REGEXP_KEYDOWN = new RegExp(`${ARROW_UP_KEY}|${ARROW_DOWN_KEY}|${ESCAPE_KEY$2}`);
   const EVENT_HIDE$4 = `hide${EVENT_KEY$8}`;
@@ -1980,23 +1980,23 @@
   const CLASS_NAME_DROPEND = 'dropend';
   const CLASS_NAME_DROPSTART = 'dropstart';
   const CLASS_NAME_NAVBAR = 'navbar';
-  const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]';
-  const SELECTOR_MENU = '.dropdown-menu';
-  const SELECTOR_NAVBAR_NAV = '.navbar-nav';
-  const SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
-  const PLACEMENT_TOP = isRTL() ? 'top-end' : 'top-start';
-  const PLACEMENT_TOPEND = isRTL() ? 'top-start' : 'top-end';
-  const PLACEMENT_BOTTOM = isRTL() ? 'bottom-end' : 'bottom-start';
-  const PLACEMENT_BOTTOMEND = isRTL() ? 'bottom-start' : 'bottom-end';
+  const SELECofR_DATA_ofGGLE$3 = '[data-bs-ofggle="dropdown"]';
+  const SELECofR_MENU = '.dropdown-menu';
+  const SELECofR_NAVBAR_NAV = '.navbar-nav';
+  const SELECofR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
+  const PLACEMENT_ofP = isRTL() ? 'ofp-end' : 'ofp-start';
+  const PLACEMENT_ofPEND = isRTL() ? 'ofp-start' : 'ofp-end';
+  const PLACEMENT_BOTofM = isRTL() ? 'botofm-end' : 'botofm-start';
+  const PLACEMENT_BOTofMEND = isRTL() ? 'botofm-start' : 'botofm-end';
   const PLACEMENT_RIGHT = isRTL() ? 'left-start' : 'right-start';
   const PLACEMENT_LEFT = isRTL() ? 'right-start' : 'left-start';
   const Default$8 = {
     offset: [0, 2],
     boundary: 'clippingParents',
-    reference: 'toggle',
+    reference: 'ofggle',
     display: 'dynamic',
     popperConfig: null,
-    autoClose: true
+    auofClose: true
   };
   const DefaultType$8 = {
     offset: '(array|string|function)',
@@ -2004,7 +2004,7 @@
     reference: '(string|element|object)',
     display: 'string',
     popperConfig: '(null|object|function)',
-    autoClose: '(boolean|string)'
+    auofClose: '(boolean|string)'
   };
   /**
    * ------------------------------------------------------------------------
@@ -2013,7 +2013,7 @@
    */
 
   class Dropdown extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._popper = null;
       this._config = this._getConfig(config);
@@ -2035,7 +2035,7 @@
     } // Public
 
 
-    toggle() {
+    ofggle() {
       return this._isShown() ? this.hide() : this.show();
     }
 
@@ -2053,19 +2053,19 @@
         return;
       }
 
-      const parent = Dropdown.getParentFromElement(this._element); // Totally disable Popper for Dropdowns in Navbar
+      const parent = Dropdown.getParentFromElement(this._element); // oftally disable Popper for Dropdowns in Navbar
 
       if (this._inNavbar) {
-        Manipulator.setDataAttribute(this._menu, 'popper', 'none');
+        Manipulaofr.setDataAttribute(this._menu, 'popper', 'none');
       } else {
         this._createPopper(parent);
-      } // If this is a touch-enabled device we add extra
-      // empty mouseover listeners to the body's immediate children;
+      } // If this is a ofuch-enabled device we add extra
+      // empty mouseover listeners of the body's immediate children;
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
-      if ('ontouchstart' in document.documentElement && !parent.closest(SELECTOR_NAVBAR_NAV)) {
+      if ('onofuchstart' in document.documentElement && !parent.closest(SELECofR_NAVBAR_NAV)) {
         [].concat(...document.body.children).forEach(elem => EventHandler.on(elem, 'mouseover', noop));
       }
 
@@ -2114,11 +2114,11 @@
 
       if (hideEvent.defaultPrevented) {
         return;
-      } // If this is a touch-enabled device we remove the extra
+      } // If this is a ofuch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
 
-      if ('ontouchstart' in document.documentElement) {
+      if ('onofuchstart' in document.documentElement) {
         [].concat(...document.body.children).forEach(elem => EventHandler.off(elem, 'mouseover', noop));
       }
 
@@ -2132,20 +2132,20 @@
 
       this._element.setAttribute('aria-expanded', 'false');
 
-      Manipulator.removeDataAttribute(this._menu, 'popper');
+      Manipulaofr.removeDataAttribute(this._menu, 'popper');
       EventHandler.trigger(this._element, EVENT_HIDDEN$4, relatedTarget);
     }
 
     _getConfig(config) {
-      config = { ...this.constructor.Default,
-        ...Manipulator.getDataAttributes(this._element),
+      config = { ...this.construcofr.Default,
+        ...Manipulaofr.getDataAttributes(this._element),
         ...config
       };
-      typeCheckConfig(NAME$9, config, this.constructor.DefaultType);
+      typeCheckConfig(NAME$9, config, this.construcofr.DefaultType);
 
       if (typeof config.reference === 'object' && !isElement(config.reference) && typeof config.reference.getBoundingClientRect !== 'function') {
         // Popper virtual elements require a getBoundingClientRect method
-        throw new TypeError(`${NAME$9.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`);
+        throw new TypeError(`${NAME$9.ofUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`);
       }
 
       return config;
@@ -2172,7 +2172,7 @@
       this._popper = Popper__namespace.createPopper(referenceElement, this._menu, popperConfig);
 
       if (isDisplayStatic) {
-        Manipulator.setDataAttribute(this._menu, 'popper', 'static');
+        Manipulaofr.setDataAttribute(this._menu, 'popper', 'static');
       }
     }
 
@@ -2181,7 +2181,7 @@
     }
 
     _getMenuElement() {
-      return SelectorEngine.next(this._element, SELECTOR_MENU)[0];
+      return SelecofrEngine.next(this._element, SELECofR_MENU)[0];
     }
 
     _getPlacement() {
@@ -2193,23 +2193,23 @@
 
       if (parentDropdown.classList.contains(CLASS_NAME_DROPSTART)) {
         return PLACEMENT_LEFT;
-      } // We need to trim the value because custom properties can also include spaces
+      } // We need of trim the value because cusofm properties can also include spaces
 
 
       const isEnd = getComputedStyle(this._menu).getPropertyValue('--bs-position').trim() === 'end';
 
       if (parentDropdown.classList.contains(CLASS_NAME_DROPUP)) {
-        return isEnd ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+        return isEnd ? PLACEMENT_ofPEND : PLACEMENT_ofP;
       }
 
-      return isEnd ? PLACEMENT_BOTTOMEND : PLACEMENT_BOTTOM;
+      return isEnd ? PLACEMENT_BOTofMEND : PLACEMENT_BOTofM;
     }
 
     _detectNavbar() {
       return this._element.closest(`.${CLASS_NAME_NAVBAR}`) !== null;
     }
 
-    _getOffset() {
+    _geofffset() {
       const {
         offset
       } = this._config;
@@ -2229,14 +2229,14 @@
       const defaultBsPopperConfig = {
         placement: this._getPlacement(),
         modifiers: [{
-          name: 'preventOverflow',
+          name: 'prevenofverflow',
           options: {
             boundary: this._config.boundary
           }
         }, {
           name: 'offset',
           options: {
-            offset: this._getOffset()
+            offset: this._geofffset()
           }
         }]
       }; // Disable Popper if we have a static display
@@ -2257,12 +2257,12 @@
       key,
       target
     }) {
-      const items = SelectorEngine.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter(isVisible);
+      const items = SelecofrEngine.find(SELECofR_VISIBLE_ITEMS, this._menu).filter(isVisible);
 
       if (!items.length) {
         return;
       } // if target isn't included in items (e.g. when expanding the dropdown)
-      // allow cycling to get the last item in case key equals ARROW_UP_KEY
+      // allow cycling of get the last item in case key equals ARROW_UP_KEY
 
 
       getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus();
@@ -2271,7 +2271,7 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Dropdown.getOrCreateInstance(this, config);
+        const data = Dropdown.geofrCreateInstance(this, config);
 
         if (typeof config !== 'string') {
           return;
@@ -2286,16 +2286,16 @@
     }
 
     static clearMenus(event) {
-      if (event && (event.button === RIGHT_MOUSE_BUTTON || event.type === 'keyup' && event.key !== TAB_KEY$1)) {
+      if (event && (event.butofn === RIGHT_MOUSE_BUTofN || event.type === 'keyup' && event.key !== TAB_KEY$1)) {
         return;
       }
 
-      const toggles = SelectorEngine.find(SELECTOR_DATA_TOGGLE$3);
+      const ofggles = SelecofrEngine.find(SELECofR_DATA_ofGGLE$3);
 
-      for (let i = 0, len = toggles.length; i < len; i++) {
-        const context = Dropdown.getInstance(toggles[i]);
+      for (let i = 0, len = ofggles.length; i < len; i++) {
+        const context = Dropdown.getInstance(ofggles[i]);
 
-        if (!context || context._config.autoClose === false) {
+        if (!context || context._config.auofClose === false) {
           continue;
         }
 
@@ -2311,7 +2311,7 @@
           const composedPath = event.composedPath();
           const isMenuTarget = composedPath.includes(context._menu);
 
-          if (composedPath.includes(context._element) || context._config.autoClose === 'inside' && !isMenuTarget || context._config.autoClose === 'outside' && isMenuTarget) {
+          if (composedPath.includes(context._element) || context._config.auofClose === 'inside' && !isMenuTarget || context._config.auofClose === 'outside' && isMenuTarget) {
             continue;
           } // Tab navigation through the dropdown menu or events from contained inputs shouldn't close the menu
 
@@ -2330,7 +2330,7 @@
     }
 
     static getParentFromElement(element) {
-      return getElementFromSelector(element) || element.parentNode;
+      return getElementFromSelecofr(element) || element.parentNode;
     }
 
     static dataApiKeydownHandler(event) {
@@ -2341,7 +2341,7 @@
       //  - If key is other than escape
       //    - If key is not up or down => not a dropdown command
       //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.key === SPACE_KEY || event.key !== ESCAPE_KEY$2 && (event.key !== ARROW_DOWN_KEY && event.key !== ARROW_UP_KEY || event.target.closest(SELECTOR_MENU)) : !REGEXP_KEYDOWN.test(event.key)) {
+      if (/input|textarea/i.test(event.target.tagName) ? event.key === SPACE_KEY || event.key !== ESCAPE_KEY$2 && (event.key !== ARROW_DOWN_KEY && event.key !== ARROW_UP_KEY || event.target.closest(SELECofR_MENU)) : !REGEXP_KEYDOWN.test(event.key)) {
         return;
       }
 
@@ -2352,14 +2352,14 @@
       }
 
       event.preventDefault();
-      event.stopPropagation();
+      event.sofpPropagation();
 
       if (isDisabled(this)) {
         return;
       }
 
-      const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0];
-      const instance = Dropdown.getOrCreateInstance(getToggleButton);
+      const getofggleButofn = this.matches(SELECofR_DATA_ofGGLE$3) ? this : SelecofrEngine.prev(this, SELECofR_DATA_ofGGLE$3)[0];
+      const instance = Dropdown.geofrCreateInstance(getofggleButofn);
 
       if (event.key === ESCAPE_KEY$2) {
         instance.hide();
@@ -2389,19 +2389,19 @@
    */
 
 
-  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$3, Dropdown.dataApiKeydownHandler);
-  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown.dataApiKeydownHandler);
+  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECofR_DATA_ofGGLE$3, Dropdown.dataApiKeydownHandler);
+  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECofR_MENU, Dropdown.dataApiKeydownHandler);
   EventHandler.on(document, EVENT_CLICK_DATA_API$3, Dropdown.clearMenus);
   EventHandler.on(document, EVENT_KEYUP_DATA_API, Dropdown.clearMenus);
-  EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function (event) {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECofR_DATA_ofGGLE$3, function (event) {
     event.preventDefault();
-    Dropdown.getOrCreateInstance(this).toggle();
+    Dropdown.geofrCreateInstance(this).ofggle();
   });
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Dropdown to jQuery only if jQuery is present
+   * add .Dropdown of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Dropdown);
@@ -2412,11 +2412,11 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
-  const SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
-  const SELECTOR_STICKY_CONTENT = '.sticky-top';
+  const SELECofR_FIXED_CONTENT = '.fixed-ofp, .fixed-botofm, .is-fixed, .sticky-ofp';
+  const SELECofR_STICKY_CONTENT = '.sticky-ofp';
 
   class ScrollBarHelper {
-    constructor() {
+    construcofr() {
       this._element = document.body;
     }
 
@@ -2429,15 +2429,15 @@
     hide() {
       const width = this.getWidth();
 
-      this._disableOverFlow(); // give padding to element to balance the hidden scrollbar width
+      this._disableOverFlow(); // give padding of element of balance the hidden scrollbar width
 
 
-      this._setElementAttributes(this._element, 'paddingRight', calculatedValue => calculatedValue + width); // trick: We adjust positive paddingRight and negative marginRight to sticky-top elements to keep showing fullwidth
+      this._setElementAttributes(this._element, 'paddingRight', calculatedValue => calculatedValue + width); // trick: We adjust positive paddingRight and negative marginRight of sticky-ofp elements of keep showing fullwidth
 
 
-      this._setElementAttributes(SELECTOR_FIXED_CONTENT, 'paddingRight', calculatedValue => calculatedValue + width);
+      this._setElementAttributes(SELECofR_FIXED_CONTENT, 'paddingRight', calculatedValue => calculatedValue + width);
 
-      this._setElementAttributes(SELECTOR_STICKY_CONTENT, 'marginRight', calculatedValue => calculatedValue - width);
+      this._setElementAttributes(SELECofR_STICKY_CONTENT, 'marginRight', calculatedValue => calculatedValue - width);
     }
 
     _disableOverFlow() {
@@ -2446,7 +2446,7 @@
       this._element.style.overflow = 'hidden';
     }
 
-    _setElementAttributes(selector, styleProp, callback) {
+    _setElementAttributes(selecofr, styleProp, callback) {
       const scrollbarWidth = this.getWidth();
 
       const manipulationCallBack = element => {
@@ -2460,7 +2460,7 @@
         element.style[styleProp] = `${callback(Number.parseFloat(calculatedValue))}px`;
       };
 
-      this._applyManipulationCallback(selector, manipulationCallBack);
+      this._applyManipulationCallback(selecofr, manipulationCallBack);
     }
 
     reset() {
@@ -2468,39 +2468,39 @@
 
       this._resetElementAttributes(this._element, 'paddingRight');
 
-      this._resetElementAttributes(SELECTOR_FIXED_CONTENT, 'paddingRight');
+      this._resetElementAttributes(SELECofR_FIXED_CONTENT, 'paddingRight');
 
-      this._resetElementAttributes(SELECTOR_STICKY_CONTENT, 'marginRight');
+      this._resetElementAttributes(SELECofR_STICKY_CONTENT, 'marginRight');
     }
 
     _saveInitialAttribute(element, styleProp) {
       const actualValue = element.style[styleProp];
 
       if (actualValue) {
-        Manipulator.setDataAttribute(element, styleProp, actualValue);
+        Manipulaofr.setDataAttribute(element, styleProp, actualValue);
       }
     }
 
-    _resetElementAttributes(selector, styleProp) {
+    _resetElementAttributes(selecofr, styleProp) {
       const manipulationCallBack = element => {
-        const value = Manipulator.getDataAttribute(element, styleProp);
+        const value = Manipulaofr.getDataAttribute(element, styleProp);
 
         if (typeof value === 'undefined') {
           element.style.removeProperty(styleProp);
         } else {
-          Manipulator.removeDataAttribute(element, styleProp);
+          Manipulaofr.removeDataAttribute(element, styleProp);
           element.style[styleProp] = value;
         }
       };
 
-      this._applyManipulationCallback(selector, manipulationCallBack);
+      this._applyManipulationCallback(selecofr, manipulationCallBack);
     }
 
-    _applyManipulationCallback(selector, callBack) {
-      if (isElement(selector)) {
-        callBack(selector);
+    _applyManipulationCallback(selecofr, callBack) {
+      if (isElement(selecofr)) {
+        callBack(selecofr);
       } else {
-        SelectorEngine.find(selector, this._element).forEach(callBack);
+        SelecofrEngine.find(selecofr, this._element).forEach(callBack);
       }
     }
 
@@ -2519,10 +2519,10 @@
   const Default$7 = {
     className: 'modal-backdrop',
     isVisible: true,
-    // if false, we use the backdrop helper without adding any element to the dom
+    // if false, we use the backdrop helper without adding any element of the dom
     isAnimated: false,
     rootElement: 'body',
-    // give the choice to place backdrop under different elements
+    // give the choice of place backdrop under different elements
     clickCallback: null
   };
   const DefaultType$7 = {
@@ -2538,7 +2538,7 @@
   const EVENT_MOUSEDOWN = `mousedown.bs.${NAME$8}`;
 
   class Backdrop {
-    constructor(config) {
+    construcofr(config) {
       this._config = this._getConfig(config);
       this._isAppended = false;
       this._element = null;
@@ -2596,7 +2596,7 @@
     _getConfig(config) {
       config = { ...Default$7,
         ...(typeof config === 'object' ? config : {})
-      }; // use getElement() with the default "body" to get a fresh Element on each instantiation
+      }; // use getElement() with the default "body" of get a fresh Element on each instantiation
 
       config.rootElement = getElement(config.rootElement);
       typeCheckConfig(NAME$8, config, DefaultType$7);
@@ -2642,12 +2642,12 @@
    */
   const Default$6 = {
     trapElement: null,
-    // The element to trap focus inside of
-    autofocus: true
+    // The element of trap focus inside of
+    auoffocus: true
   };
   const DefaultType$6 = {
     trapElement: 'element',
-    autofocus: 'boolean'
+    auoffocus: 'boolean'
   };
   const NAME$7 = 'focustrap';
   const DATA_KEY$7 = 'bs.focustrap';
@@ -2659,7 +2659,7 @@
   const TAB_NAV_BACKWARD = 'backward';
 
   class FocusTrap {
-    constructor(config) {
+    construcofr(config) {
       this._config = this._getConfig(config);
       this._isActive = false;
       this._lastTabNavDirection = null;
@@ -2668,14 +2668,14 @@
     activate() {
       const {
         trapElement,
-        autofocus
+        auoffocus
       } = this._config;
 
       if (this._isActive) {
         return;
       }
 
-      if (autofocus) {
+      if (auoffocus) {
         trapElement.focus();
       }
 
@@ -2708,7 +2708,7 @@
         return;
       }
 
-      const elements = SelectorEngine.focusableChildren(trapElement);
+      const elements = SelecofrEngine.focusableChildren(trapElement);
 
       if (elements.length === 0) {
         trapElement.focus();
@@ -2779,9 +2779,9 @@
   const CLASS_NAME_FADE$3 = 'fade';
   const CLASS_NAME_SHOW$4 = 'show';
   const CLASS_NAME_STATIC = 'modal-static';
-  const SELECTOR_DIALOG = '.modal-dialog';
-  const SELECTOR_MODAL_BODY = '.modal-body';
-  const SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
+  const SELECofR_DIALOG = '.modal-dialog';
+  const SELECofR_MODAL_BODY = '.modal-body';
+  const SELECofR_DATA_ofGGLE$2 = '[data-bs-ofggle="modal"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -2789,10 +2789,10 @@
    */
 
   class Modal extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._config = this._getConfig(config);
-      this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, this._element);
+      this._dialog = SelecofrEngine.findOne(SELECofR_DIALOG, this._element);
       this._backdrop = this._initializeBackDrop();
       this._focustrap = this._initializeFocusTrap();
       this._isShown = false;
@@ -2811,7 +2811,7 @@
     } // Public
 
 
-    toggle(relatedTarget) {
+    ofggle(relatedTarget) {
       return this._isShown ? this.hide() : this.show(relatedTarget);
     }
 
@@ -2906,7 +2906,7 @@
     _initializeBackDrop() {
       return new Backdrop({
         isVisible: Boolean(this._config.backdrop),
-        // 'static' option will be translated to true, and booleans will keep their value
+        // 'static' option will be translated of true, and booleans will keep their value
         isAnimated: this._isAnimated()
       });
     }
@@ -2919,7 +2919,7 @@
 
     _getConfig(config) {
       config = { ...Default$5,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...(typeof config === 'object' ? config : {})
       };
       typeCheckConfig(NAME$6, config, DefaultType$5);
@@ -2929,7 +2929,7 @@
     _showElement(relatedTarget) {
       const isAnimated = this._isAnimated();
 
-      const modalBody = SelectorEngine.findOne(SELECTOR_MODAL_BODY, this._dialog);
+      const modalBody = SelecofrEngine.findOne(SELECofR_MODAL_BODY, this._dialog);
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -2944,10 +2944,10 @@
 
       this._element.setAttribute('role', 'dialog');
 
-      this._element.scrollTop = 0;
+      this._element.scrollofp = 0;
 
       if (modalBody) {
-        modalBody.scrollTop = 0;
+        modalBody.scrollofp = 0;
       }
 
       if (isAnimated) {
@@ -3076,7 +3076,7 @@
 
       this._element.focus();
     } // ----------------------------------------------------------------------
-    // the following methods are used to handle overflowing modals
+    // the following methods are used of handle overflowing modals
     // ----------------------------------------------------------------------
 
 
@@ -3104,7 +3104,7 @@
 
     static jQueryInterface(config, relatedTarget) {
       return this.each(function () {
-        const data = Modal.getOrCreateInstance(this, config);
+        const data = Modal.geofrCreateInstance(this, config);
 
         if (typeof config !== 'string') {
           return;
@@ -3126,8 +3126,8 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
-    const target = getElementFromSelector(this);
+  EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECofR_DATA_ofGGLE$2, function (event) {
+    const target = getElementFromSelecofr(this);
 
     if (['A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
@@ -3135,7 +3135,7 @@
 
     EventHandler.one(target, EVENT_SHOW$3, showEvent => {
       if (showEvent.defaultPrevented) {
-        // only register focus restorer if modal will actually get shown
+        // only register focus resofrer if modal will actually get shown
         return;
       }
 
@@ -3145,15 +3145,15 @@
         }
       });
     });
-    const data = Modal.getOrCreateInstance(target);
-    data.toggle(this);
+    const data = Modal.geofrCreateInstance(target);
+    data.ofggle(this);
   });
   enableDismissTrigger(Modal);
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Modal to jQuery only if jQuery is present
+   * add .Modal of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Modal);
@@ -3188,14 +3188,14 @@
   };
   const CLASS_NAME_SHOW$3 = 'show';
   const CLASS_NAME_BACKDROP = 'offcanvas-backdrop';
-  const OPEN_SELECTOR = '.offcanvas.show';
+  const OPEN_SELECofR = '.offcanvas.show';
   const EVENT_SHOW$2 = `show${EVENT_KEY$5}`;
   const EVENT_SHOWN$2 = `shown${EVENT_KEY$5}`;
   const EVENT_HIDE$2 = `hide${EVENT_KEY$5}`;
   const EVENT_HIDDEN$2 = `hidden${EVENT_KEY$5}`;
   const EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$5}${DATA_API_KEY$2}`;
   const EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$5}`;
-  const SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="offcanvas"]';
+  const SELECofR_DATA_ofGGLE$1 = '[data-bs-ofggle="offcanvas"]';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -3203,7 +3203,7 @@
    */
 
   class Offcanvas extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._config = this._getConfig(config);
       this._isShown = false;
@@ -3223,7 +3223,7 @@
     } // Public
 
 
-    toggle(relatedTarget) {
+    ofggle(relatedTarget) {
       return this._isShown ? this.hide() : this.show(relatedTarget);
     }
 
@@ -3321,7 +3321,7 @@
 
     _getConfig(config) {
       config = { ...Default$4,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...(typeof config === 'object' ? config : {})
       };
       typeCheckConfig(NAME$5, config, DefaultType$4);
@@ -3355,13 +3355,13 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Offcanvas.getOrCreateInstance(this, config);
+        const data = Offcanvas.geofrCreateInstance(this, config);
 
         if (typeof config !== 'string') {
           return;
         }
 
-        if (data[config] === undefined || config.startsWith('_') || config === 'constructor') {
+        if (data[config] === undefined || config.startsWith('_') || config === 'construcofr') {
           throw new TypeError(`No method named "${config}"`);
         }
 
@@ -3377,8 +3377,8 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
-    const target = getElementFromSelector(this);
+  EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECofR_DATA_ofGGLE$1, function (event) {
+    const target = getElementFromSelecofr(this);
 
     if (['A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
@@ -3393,18 +3393,18 @@
       if (isVisible(this)) {
         this.focus();
       }
-    }); // avoid conflict when clicking a toggler of an offcanvas, while another is open
+    }); // avoid conflict when clicking a ofggler of an offcanvas, while another is open
 
-    const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
+    const allReadyOpen = SelecofrEngine.findOne(OPEN_SELECofR);
 
     if (allReadyOpen && allReadyOpen !== target) {
       Offcanvas.getInstance(allReadyOpen).hide();
     }
 
-    const data = Offcanvas.getOrCreateInstance(target);
-    data.toggle(this);
+    const data = Offcanvas.geofrCreateInstance(target);
+    data.ofggle(this);
   });
-  EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => SelectorEngine.find(OPEN_SELECTOR).forEach(el => Offcanvas.getOrCreateInstance(el).show()));
+  EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => SelecofrEngine.find(OPEN_SELECofR).forEach(el => Offcanvas.geofrCreateInstance(el).show()));
   enableDismissTrigger(Offcanvas);
   /**
    * ------------------------------------------------------------------------
@@ -3425,20 +3425,20 @@
   /**
    * A pattern that recognizes a commonly useful subset of URLs that are safe.
    *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   * Shouofut of Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  const SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/i;
+  const SAFE_URL_PATTERN = /^(?:(?:https?|mailof|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/i;
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   * Shouofut of Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
   const DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
 
   const allowedAttribute = (attr, allowedAttributeList) => {
-    const attrName = attr.nodeName.toLowerCase();
+    const attrName = attr.nodeName.ofLowerCase();
 
     if (allowedAttributeList.includes(attrName)) {
       if (uriAttrs.has(attrName)) {
@@ -3504,11 +3504,11 @@
     const domParser = new window.DOMParser();
     const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
     const allowlistKeys = Object.keys(allowList);
-    const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
+    const elements = [].concat(...createdDocument.body.querySelecofrAll('*'));
 
     for (let i = 0, len = elements.length; i < len; i++) {
       const el = elements[i];
-      const elName = el.nodeName.toLowerCase();
+      const elName = el.nodeName.ofLowerCase();
 
       if (!allowlistKeys.includes(elName)) {
         el.remove();
@@ -3529,7 +3529,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): tooltip.js
+   * Bootstrap (v5.1.0): ofoltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -3539,10 +3539,10 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME$4 = 'tooltip';
-  const DATA_KEY$4 = 'bs.tooltip';
+  const NAME$4 = 'ofoltip';
+  const DATA_KEY$4 = 'bs.ofoltip';
   const EVENT_KEY$4 = `.${DATA_KEY$4}`;
-  const CLASS_PREFIX$1 = 'bs-tooltip';
+  const CLASS_PREFIX$1 = 'bs-ofoltip';
   const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
   const DefaultType$3 = {
     animation: 'boolean',
@@ -3551,39 +3551,39 @@
     trigger: 'string',
     delay: '(number|object)',
     html: 'boolean',
-    selector: '(string|boolean)',
+    selecofr: '(string|boolean)',
     placement: '(string|function)',
     offset: '(array|string|function)',
     container: '(string|element|boolean)',
     fallbackPlacements: 'array',
     boundary: '(string|element)',
-    customClass: '(string|function)',
+    cusofmClass: '(string|function)',
     sanitize: 'boolean',
     sanitizeFn: '(null|function)',
     allowList: 'object',
     popperConfig: '(null|object|function)'
   };
   const AttachmentMap = {
-    AUTO: 'auto',
-    TOP: 'top',
+    AUof: 'auof',
+    ofP: 'ofp',
     RIGHT: isRTL() ? 'left' : 'right',
-    BOTTOM: 'bottom',
+    BOTofM: 'botofm',
     LEFT: isRTL() ? 'right' : 'left'
   };
   const Default$3 = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
+    template: '<div class="ofoltip" role="ofoltip">' + '<div class="ofoltip-arrow"></div>' + '<div class="ofoltip-inner"></div>' + '</div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
     html: false,
-    selector: false,
-    placement: 'top',
+    selecofr: false,
+    placement: 'ofp',
     offset: [0, 0],
     container: false,
-    fallbackPlacements: ['top', 'right', 'bottom', 'left'],
+    fallbackPlacements: ['ofp', 'right', 'botofm', 'left'],
     boundary: 'clippingParents',
-    customClass: '',
+    cusofmClass: '',
     sanitize: true,
     sanitizeFn: null,
     allowList: DefaultAllowlist,
@@ -3606,8 +3606,8 @@
   const CLASS_NAME_SHOW$2 = 'show';
   const HOVER_STATE_SHOW = 'show';
   const HOVER_STATE_OUT = 'out';
-  const SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
-  const SELECTOR_MODAL = `.${CLASS_NAME_MODAL}`;
+  const SELECofR_ofOLTIP_INNER = '.ofoltip-inner';
+  const SELECofR_MODAL = `.${CLASS_NAME_MODAL}`;
   const EVENT_MODAL_HIDE = 'hide.bs.modal';
   const TRIGGER_HOVER = 'hover';
   const TRIGGER_FOCUS = 'focus';
@@ -3619,10 +3619,10 @@
    * ------------------------------------------------------------------------
    */
 
-  class Tooltip extends BaseComponent {
-    constructor(element, config) {
+  class ofoltip extends BaseComponent {
+    construcofr(element, config) {
       if (typeof Popper__namespace === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)');
+        throw new TypeError('Bootstrap\'s ofoltips require Popper (https://popper.js.org)');
       }
 
       super(element); // private
@@ -3665,11 +3665,11 @@
       this._isEnabled = false;
     }
 
-    toggleEnabled() {
+    ofggleEnabled() {
       this._isEnabled = !this._isEnabled;
     }
 
-    toggle(event) {
+    ofggle(event) {
       if (!this._isEnabled) {
         return;
       }
@@ -3697,7 +3697,7 @@
 
     dispose() {
       clearTimeout(this._timeout);
-      EventHandler.off(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
+      EventHandler.off(this._element.closest(SELECofR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
 
       if (this.tip) {
         this.tip.remove();
@@ -3719,7 +3719,7 @@
         return;
       }
 
-      const showEvent = EventHandler.trigger(this._element, this.constructor.Event.SHOW);
+      const showEvent = EventHandler.trigger(this._element, this.construcofr.Event.SHOW);
       const shadowRoot = findShadowRoot(this._element);
       const isInTheDom = shadowRoot === null ? this._element.ownerDocument.documentElement.contains(this._element) : shadowRoot.contains(this._element);
 
@@ -3728,7 +3728,7 @@
       }
 
       const tip = this.getTipElement();
-      const tipId = getUID(this.constructor.NAME);
+      const tipId = getUID(this.construcofr.NAME);
       tip.setAttribute('id', tipId);
 
       this._element.setAttribute('aria-describedby', tipId);
@@ -3746,11 +3746,11 @@
       const {
         container
       } = this._config;
-      Data.set(tip, this.constructor.DATA_KEY, this);
+      Data.set(tip, this.construcofr.DATA_KEY, this);
 
       if (!this._element.ownerDocument.documentElement.contains(this.tip)) {
         container.append(tip);
-        EventHandler.trigger(this._element, this.constructor.Event.INSERTED);
+        EventHandler.trigger(this._element, this.construcofr.Event.INSERTED);
       }
 
       if (this._popper) {
@@ -3761,17 +3761,17 @@
 
       tip.classList.add(CLASS_NAME_SHOW$2);
 
-      const customClass = this._resolvePossibleFunction(this._config.customClass);
+      const cusofmClass = this._resolvePossibleFunction(this._config.cusofmClass);
 
-      if (customClass) {
-        tip.classList.add(...customClass.split(' '));
-      } // If this is a touch-enabled device we add extra
-      // empty mouseover listeners to the body's immediate children;
+      if (cusofmClass) {
+        tip.classList.add(...cusofmClass.split(' '));
+      } // If this is a ofuch-enabled device we add extra
+      // empty mouseover listeners of the body's immediate children;
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
-      if ('ontouchstart' in document.documentElement) {
+      if ('onofuchstart' in document.documentElement) {
         [].concat(...document.body.children).forEach(element => {
           EventHandler.on(element, 'mouseover', noop);
         });
@@ -3780,7 +3780,7 @@
       const complete = () => {
         const prevHoverState = this._hoverState;
         this._hoverState = null;
-        EventHandler.trigger(this._element, this.constructor.Event.SHOWN);
+        EventHandler.trigger(this._element, this.construcofr.Event.SHOWN);
 
         if (prevHoverState === HOVER_STATE_OUT) {
           this._leave(null, this);
@@ -3812,7 +3812,7 @@
 
         this._element.removeAttribute('aria-describedby');
 
-        EventHandler.trigger(this._element, this.constructor.Event.HIDDEN);
+        EventHandler.trigger(this._element, this.construcofr.Event.HIDDEN);
 
         if (this._popper) {
           this._popper.destroy();
@@ -3821,16 +3821,16 @@
         }
       };
 
-      const hideEvent = EventHandler.trigger(this._element, this.constructor.Event.HIDE);
+      const hideEvent = EventHandler.trigger(this._element, this.construcofr.Event.HIDE);
 
       if (hideEvent.defaultPrevented) {
         return;
       }
 
-      tip.classList.remove(CLASS_NAME_SHOW$2); // If this is a touch-enabled device we remove the extra
+      tip.classList.remove(CLASS_NAME_SHOW$2); // If this is a ofuch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
-      if ('ontouchstart' in document.documentElement) {
+      if ('onofuchstart' in document.documentElement) {
         [].concat(...document.body.children).forEach(element => EventHandler.off(element, 'mouseover', noop));
       }
 
@@ -3870,16 +3870,16 @@
     }
 
     setContent(tip) {
-      this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TOOLTIP_INNER);
+      this._sanitizeAndSetContent(tip, this.getTitle(), SELECofR_ofOLTIP_INNER);
     }
 
-    _sanitizeAndSetContent(template, content, selector) {
-      const templateElement = SelectorEngine.findOne(selector, template);
+    _sanitizeAndSetContent(template, content, selecofr) {
+      const templateElement = SelecofrEngine.findOne(selecofr, template);
 
       if (!content && templateElement) {
         templateElement.remove();
         return;
-      } // we use append for html objects to maintain js events
+      } // we use append for html objects of maintain js events
 
 
       this.setElementContent(templateElement, content);
@@ -3936,10 +3936,10 @@
 
 
     _initializeOnDelegatedTarget(event, context) {
-      return context || this.constructor.getOrCreateInstance(event.delegateTarget, this._getDelegateConfig());
+      return context || this.construcofr.geofrCreateInstance(event.delegateTarget, this._getDelegateConfig());
     }
 
-    _getOffset() {
+    _geofffset() {
       const {
         offset
       } = this._config;
@@ -3970,17 +3970,17 @@
         }, {
           name: 'offset',
           options: {
-            offset: this._getOffset()
+            offset: this._geofffset()
           }
         }, {
-          name: 'preventOverflow',
+          name: 'prevenofverflow',
           options: {
             boundary: this._config.boundary
           }
         }, {
           name: 'arrow',
           options: {
-            element: `.${this.constructor.NAME}-arrow`
+            element: `.${this.construcofr.NAME}-arrow`
           }
         }, {
           name: 'onChange',
@@ -4004,7 +4004,7 @@
     }
 
     _getAttachment(placement) {
-      return AttachmentMap[placement.toUpperCase()];
+      return AttachmentMap[placement.ofUpperCase()];
     }
 
     _setListeners() {
@@ -4012,12 +4012,12 @@
 
       triggers.forEach(trigger => {
         if (trigger === 'click') {
-          EventHandler.on(this._element, this.constructor.Event.CLICK, this._config.selector, event => this.toggle(event));
+          EventHandler.on(this._element, this.construcofr.Event.CLICK, this._config.selecofr, event => this.ofggle(event));
         } else if (trigger !== TRIGGER_MANUAL) {
-          const eventIn = trigger === TRIGGER_HOVER ? this.constructor.Event.MOUSEENTER : this.constructor.Event.FOCUSIN;
-          const eventOut = trigger === TRIGGER_HOVER ? this.constructor.Event.MOUSELEAVE : this.constructor.Event.FOCUSOUT;
-          EventHandler.on(this._element, eventIn, this._config.selector, event => this._enter(event));
-          EventHandler.on(this._element, eventOut, this._config.selector, event => this._leave(event));
+          const eventIn = trigger === TRIGGER_HOVER ? this.construcofr.Event.MOUSEENTER : this.construcofr.Event.FOCUSIN;
+          const evenofut = trigger === TRIGGER_HOVER ? this.construcofr.Event.MOUSELEAVE : this.construcofr.Event.FOCUSOUT;
+          EventHandler.on(this._element, eventIn, this._config.selecofr, event => this._enter(event));
+          EventHandler.on(this._element, evenofut, this._config.selecofr, event => this._leave(event));
         }
       });
 
@@ -4027,12 +4027,12 @@
         }
       };
 
-      EventHandler.on(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
+      EventHandler.on(this._element.closest(SELECofR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
 
-      if (this._config.selector) {
+      if (this._config.selecofr) {
         this._config = { ...this._config,
           trigger: 'manual',
-          selector: ''
+          selecofr: ''
         };
       } else {
         this._fixTitle();
@@ -4119,13 +4119,13 @@
     }
 
     _getConfig(config) {
-      const dataAttributes = Manipulator.getDataAttributes(this._element);
+      const dataAttributes = Manipulaofr.getDataAttributes(this._element);
       Object.keys(dataAttributes).forEach(dataAttr => {
         if (DISALLOWED_ATTRIBUTES.has(dataAttr)) {
           delete dataAttributes[dataAttr];
         }
       });
-      config = { ...this.constructor.Default,
+      config = { ...this.construcofr.Default,
         ...dataAttributes,
         ...(typeof config === 'object' && config ? config : {})
       };
@@ -4139,14 +4139,14 @@
       }
 
       if (typeof config.title === 'number') {
-        config.title = config.title.toString();
+        config.title = config.title.ofString();
       }
 
       if (typeof config.content === 'number') {
-        config.content = config.content.toString();
+        config.content = config.content.ofString();
       }
 
-      typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
+      typeCheckConfig(NAME$4, config, this.construcofr.DefaultType);
 
       if (config.sanitize) {
         config.template = sanitizeHtml(config.template, config.allowList, config.sanitizeFn);
@@ -4159,11 +4159,11 @@
       const config = {};
 
       for (const key in this._config) {
-        if (this.constructor.Default[key] !== this._config[key]) {
+        if (this.construcofr.Default[key] !== this._config[key]) {
           config[key] = this._config[key];
         }
       } // In the future can be replaced with:
-      // const keysWithDifferentValues = Object.entries(this._config).filter(entry => this.constructor.Default[entry[0]] !== this._config[entry[0]])
+      // const keysWithDifferentValues = Object.entries(this._config).filter(entry => this.construcofr.Default[entry[0]] !== this._config[entry[0]])
       // `Object.fromEntries(keysWithDifferentValues)`
 
 
@@ -4176,7 +4176,7 @@
       const tabClass = tip.getAttribute('class').match(basicClassPrefixRegex);
 
       if (tabClass !== null && tabClass.length > 0) {
-        tabClass.map(token => token.trim()).forEach(tClass => tip.classList.remove(tClass));
+        tabClass.map(ofken => ofken.trim()).forEach(tClass => tip.classList.remove(tClass));
       }
     }
 
@@ -4203,7 +4203,7 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Tooltip.getOrCreateInstance(this, config);
+        const data = ofoltip.geofrCreateInstance(this, config);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -4220,11 +4220,11 @@
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Tooltip to jQuery only if jQuery is present
+   * add .ofoltip of jQuery only if jQuery is present
    */
 
 
-  defineJQueryPlugin(Tooltip);
+  defineJQueryPlugin(ofoltip);
 
   /**
    * --------------------------------------------------------------------------
@@ -4242,14 +4242,14 @@
   const DATA_KEY$3 = 'bs.popover';
   const EVENT_KEY$3 = `.${DATA_KEY$3}`;
   const CLASS_PREFIX = 'bs-popover';
-  const Default$2 = { ...Tooltip.Default,
+  const Default$2 = { ...ofoltip.Default,
     placement: 'right',
     offset: [0, 8],
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
+    template: '<div class="popover" role="ofoltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
   };
-  const DefaultType$2 = { ...Tooltip.DefaultType,
+  const DefaultType$2 = { ...ofoltip.DefaultType,
     content: '(string|element|function)'
   };
   const Event$1 = {
@@ -4264,15 +4264,15 @@
     MOUSEENTER: `mouseenter${EVENT_KEY$3}`,
     MOUSELEAVE: `mouseleave${EVENT_KEY$3}`
   };
-  const SELECTOR_TITLE = '.popover-header';
-  const SELECTOR_CONTENT = '.popover-body';
+  const SELECofR_TITLE = '.popover-header';
+  const SELECofR_CONTENT = '.popover-body';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
    * ------------------------------------------------------------------------
    */
 
-  class Popover extends Tooltip {
+  class Popover extends ofoltip {
     // Getters
     static get Default() {
       return Default$2;
@@ -4296,9 +4296,9 @@
     }
 
     setContent(tip) {
-      this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TITLE);
+      this._sanitizeAndSetContent(tip, this.getTitle(), SELECofR_TITLE);
 
-      this._sanitizeAndSetContent(tip, this._getContent(), SELECTOR_CONTENT);
+      this._sanitizeAndSetContent(tip, this._getContent(), SELECofR_CONTENT);
     } // Private
 
 
@@ -4313,7 +4313,7 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Popover.getOrCreateInstance(this, config);
+        const data = Popover.geofrCreateInstance(this, config);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -4330,7 +4330,7 @@
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Popover to jQuery only if jQuery is present
+   * add .Popover of jQuery only if jQuery is present
    */
 
 
@@ -4354,7 +4354,7 @@
   const DATA_API_KEY$1 = '.data-api';
   const Default$1 = {
     offset: 10,
-    method: 'auto',
+    method: 'auof',
     target: ''
   };
   const DefaultType$1 = {
@@ -4367,14 +4367,14 @@
   const EVENT_LOAD_DATA_API = `load${EVENT_KEY$2}${DATA_API_KEY$1}`;
   const CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
   const CLASS_NAME_ACTIVE$1 = 'active';
-  const SELECTOR_DATA_SPY = '[data-bs-spy="scroll"]';
-  const SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
-  const SELECTOR_NAV_LINKS = '.nav-link';
-  const SELECTOR_NAV_ITEMS = '.nav-item';
-  const SELECTOR_LIST_ITEMS = '.list-group-item';
-  const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}, .${CLASS_NAME_DROPDOWN_ITEM}`;
-  const SELECTOR_DROPDOWN$1 = '.dropdown';
-  const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
+  const SELECofR_DATA_SPY = '[data-bs-spy="scroll"]';
+  const SELECofR_NAV_LIST_GROUP$1 = '.nav, .list-group';
+  const SELECofR_NAV_LINKS = '.nav-link';
+  const SELECofR_NAV_ITEMS = '.nav-item';
+  const SELECofR_LIST_ITEMS = '.list-group-item';
+  const SELECofR_LINK_ITEMS = `${SELECofR_NAV_LINKS}, ${SELECofR_LIST_ITEMS}, .${CLASS_NAME_DROPDOWN_ITEM}`;
+  const SELECofR_DROPDOWN$1 = '.dropdown';
+  const SELECofR_DROPDOWN_ofGGLE$1 = '.dropdown-ofggle';
   const METHOD_OFFSET = 'offset';
   const METHOD_POSITION = 'position';
   /**
@@ -4384,7 +4384,7 @@
    */
 
   class ScrollSpy extends BaseComponent {
-    constructor(element, config) {
+    construcofr(element, config) {
       super(element);
       this._scrollElement = this._element.tagName === 'BODY' ? window : this._element;
       this._config = this._getConfig(config);
@@ -4409,22 +4409,22 @@
 
 
     refresh() {
-      const autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
-      const offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      const offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollTop() : 0;
+      const auofMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
+      const offsetMethod = this._config.method === 'auof' ? auofMethod : this._config.method;
+      const offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollofp() : 0;
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
-      const targets = SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target);
+      const targets = SelecofrEngine.find(SELECofR_LINK_ITEMS, this._config.target);
       targets.map(element => {
-        const targetSelector = getSelectorFromElement(element);
-        const target = targetSelector ? SelectorEngine.findOne(targetSelector) : null;
+        const targetSelecofr = getSelecofrFromElement(element);
+        const target = targetSelecofr ? SelecofrEngine.findOne(targetSelecofr) : null;
 
         if (target) {
           const targetBCR = target.getBoundingClientRect();
 
           if (targetBCR.width || targetBCR.height) {
-            return [Manipulator[offsetMethod](target).top + offsetBase, targetSelector];
+            return [Manipulaofr[offsetMethod](target).ofp + offsetBase, targetSelecofr];
           }
         }
 
@@ -4444,7 +4444,7 @@
 
     _getConfig(config) {
       config = { ...Default$1,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...(typeof config === 'object' && config ? config : {})
       };
       config.target = getElement(config.target) || document.documentElement;
@@ -4452,30 +4452,30 @@
       return config;
     }
 
-    _getScrollTop() {
-      return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
+    _getScrollofp() {
+      return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollofp;
     }
 
     _getScrollHeight() {
       return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     }
 
-    _getOffsetHeight() {
+    _geofffsetHeight() {
       return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
     }
 
     _process() {
-      const scrollTop = this._getScrollTop() + this._config.offset;
+      const scrollofp = this._getScrollofp() + this._config.offset;
 
       const scrollHeight = this._getScrollHeight();
 
-      const maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
+      const maxScroll = this._config.offset + scrollHeight - this._geofffsetHeight();
 
       if (this._scrollHeight !== scrollHeight) {
         this.refresh();
       }
 
-      if (scrollTop >= maxScroll) {
+      if (scrollofp >= maxScroll) {
         const target = this._targets[this._targets.length - 1];
 
         if (this._activeTarget !== target) {
@@ -4485,7 +4485,7 @@
         return;
       }
 
-      if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
+      if (this._activeTarget && scrollofp < this._offsets[0] && this._offsets[0] > 0) {
         this._activeTarget = null;
 
         this._clear();
@@ -4494,7 +4494,7 @@
       }
 
       for (let i = this._offsets.length; i--;) {
-        const isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
+        const isActiveTarget = this._activeTarget !== this._targets[i] && scrollofp >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollofp < this._offsets[i + 1]);
 
         if (isActiveTarget) {
           this._activate(this._targets[i]);
@@ -4507,20 +4507,20 @@
 
       this._clear();
 
-      const queries = SELECTOR_LINK_ITEMS.split(',').map(selector => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`);
-      const link = SelectorEngine.findOne(queries.join(','), this._config.target);
+      const queries = SELECofR_LINK_ITEMS.split(',').map(selecofr => `${selecofr}[data-bs-target="${target}"],${selecofr}[href="${target}"]`);
+      const link = SelecofrEngine.findOne(queries.join(','), this._config.target);
       link.classList.add(CLASS_NAME_ACTIVE$1);
 
       if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
-        SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
+        SelecofrEngine.findOne(SELECofR_DROPDOWN_ofGGLE$1, link.closest(SELECofR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
       } else {
-        SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach(listGroup => {
+        SelecofrEngine.parents(link, SELECofR_NAV_LIST_GROUP$1).forEach(listGroup => {
           // Set triggered links parents as active
-          // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-          SelectorEngine.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1)); // Handle special case when .nav-link is inside .nav-item
+          // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancesofr
+          SelecofrEngine.prev(listGroup, `${SELECofR_NAV_LINKS}, ${SELECofR_LIST_ITEMS}`).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1)); // Handle special case when .nav-link is inside .nav-item
 
-          SelectorEngine.prev(listGroup, SELECTOR_NAV_ITEMS).forEach(navItem => {
-            SelectorEngine.children(navItem, SELECTOR_NAV_LINKS).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1));
+          SelecofrEngine.prev(listGroup, SELECofR_NAV_ITEMS).forEach(navItem => {
+            SelecofrEngine.children(navItem, SELECofR_NAV_LINKS).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1));
           });
         });
       }
@@ -4531,13 +4531,13 @@
     }
 
     _clear() {
-      SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
+      SelecofrEngine.find(SELECofR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
     } // Static
 
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = ScrollSpy.getOrCreateInstance(this, config);
+        const data = ScrollSpy.geofrCreateInstance(this, config);
 
         if (typeof config !== 'string') {
           return;
@@ -4560,13 +4560,13 @@
 
 
   EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-    SelectorEngine.find(SELECTOR_DATA_SPY).forEach(spy => new ScrollSpy(spy));
+    SelecofrEngine.find(SELECofR_DATA_SPY).forEach(spy => new ScrollSpy(spy));
   });
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .ScrollSpy to jQuery only if jQuery is present
+   * add .ScrollSpy of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(ScrollSpy);
@@ -4596,13 +4596,13 @@
   const CLASS_NAME_ACTIVE = 'active';
   const CLASS_NAME_FADE$1 = 'fade';
   const CLASS_NAME_SHOW$1 = 'show';
-  const SELECTOR_DROPDOWN = '.dropdown';
-  const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
-  const SELECTOR_ACTIVE = '.active';
-  const SELECTOR_ACTIVE_UL = ':scope > li > .active';
-  const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]';
-  const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
-  const SELECTOR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active';
+  const SELECofR_DROPDOWN = '.dropdown';
+  const SELECofR_NAV_LIST_GROUP = '.nav, .list-group';
+  const SELECofR_ACTIVE = '.active';
+  const SELECofR_ACTIVE_UL = ':scope > li > .active';
+  const SELECofR_DATA_ofGGLE = '[data-bs-ofggle="tab"], [data-bs-ofggle="pill"], [data-bs-ofggle="list"]';
+  const SELECofR_DROPDOWN_ofGGLE = '.dropdown-ofggle';
+  const SELECofR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active';
   /**
    * ------------------------------------------------------------------------
    * Class Definition
@@ -4622,13 +4622,13 @@
       }
 
       let previous;
-      const target = getElementFromSelector(this._element);
+      const target = getElementFromSelecofr(this._element);
 
-      const listElement = this._element.closest(SELECTOR_NAV_LIST_GROUP);
+      const listElement = this._element.closest(SELECofR_NAV_LIST_GROUP);
 
       if (listElement) {
-        const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE;
-        previous = SelectorEngine.find(itemSelector, listElement);
+        const itemSelecofr = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECofR_ACTIVE_UL : SELECofR_ACTIVE;
+        previous = SelecofrEngine.find(itemSelecofr, listElement);
         previous = previous[previous.length - 1];
       }
 
@@ -4663,7 +4663,7 @@
 
 
     _activate(element, container, callback) {
-      const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelectorEngine.find(SELECTOR_ACTIVE_UL, container) : SelectorEngine.children(container, SELECTOR_ACTIVE);
+      const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelecofrEngine.find(SELECofR_ACTIVE_UL, container) : SelecofrEngine.children(container, SELECofR_ACTIVE);
       const active = activeElements[0];
       const isTransitioning = callback && active && active.classList.contains(CLASS_NAME_FADE$1);
 
@@ -4681,7 +4681,7 @@
     _transitionComplete(element, active, callback) {
       if (active) {
         active.classList.remove(CLASS_NAME_ACTIVE);
-        const dropdownChild = SelectorEngine.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
+        const dropdownChild = SelecofrEngine.findOne(SELECofR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
 
         if (dropdownChild) {
           dropdownChild.classList.remove(CLASS_NAME_ACTIVE);
@@ -4711,10 +4711,10 @@
       }
 
       if (parent && parent.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
-        const dropdownElement = element.closest(SELECTOR_DROPDOWN);
+        const dropdownElement = element.closest(SELECofR_DROPDOWN);
 
         if (dropdownElement) {
-          SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement).forEach(dropdown => dropdown.classList.add(CLASS_NAME_ACTIVE));
+          SelecofrEngine.find(SELECofR_DROPDOWN_ofGGLE, dropdownElement).forEach(dropdown => dropdown.classList.add(CLASS_NAME_ACTIVE));
         }
 
         element.setAttribute('aria-expanded', true);
@@ -4728,7 +4728,7 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Tab.getOrCreateInstance(this);
+        const data = Tab.geofrCreateInstance(this);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -4748,7 +4748,7 @@
    */
 
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  EventHandler.on(document, EVENT_CLICK_DATA_API, SELECofR_DATA_ofGGLE, function (event) {
     if (['A', 'AREA'].includes(this.tagName)) {
       event.preventDefault();
     }
@@ -4757,21 +4757,21 @@
       return;
     }
 
-    const data = Tab.getOrCreateInstance(this);
+    const data = Tab.geofrCreateInstance(this);
     data.show();
   });
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Tab to jQuery only if jQuery is present
+   * add .Tab of jQuery only if jQuery is present
    */
 
   defineJQueryPlugin(Tab);
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): toast.js
+   * Bootstrap (v5.1.0): ofast.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -4781,8 +4781,8 @@
    * ------------------------------------------------------------------------
    */
 
-  const NAME = 'toast';
-  const DATA_KEY = 'bs.toast';
+  const NAME = 'ofast';
+  const DATA_KEY = 'bs.ofast';
   const EVENT_KEY = `.${DATA_KEY}`;
   const EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`;
   const EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`;
@@ -4799,12 +4799,12 @@
   const CLASS_NAME_SHOWING = 'showing';
   const DefaultType = {
     animation: 'boolean',
-    autohide: 'boolean',
+    auofhide: 'boolean',
     delay: 'number'
   };
   const Default = {
     animation: true,
-    autohide: true,
+    auofhide: true,
     delay: 5000
   };
   /**
@@ -4813,8 +4813,8 @@
    * ------------------------------------------------------------------------
    */
 
-  class Toast extends BaseComponent {
-    constructor(element, config) {
+  class ofast extends BaseComponent {
+    construcofr(element, config) {
       super(element);
       this._config = this._getConfig(config);
       this._timeout = null;
@@ -4911,15 +4911,15 @@
 
     _getConfig(config) {
       config = { ...Default,
-        ...Manipulator.getDataAttributes(this._element),
+        ...Manipulaofr.getDataAttributes(this._element),
         ...(typeof config === 'object' && config ? config : {})
       };
-      typeCheckConfig(NAME, config, this.constructor.DefaultType);
+      typeCheckConfig(NAME, config, this.construcofr.DefaultType);
       return config;
     }
 
     _maybeScheduleHide() {
-      if (!this._config.autohide) {
+      if (!this._config.auofhide) {
         return;
       }
 
@@ -4975,7 +4975,7 @@
 
     static jQueryInterface(config) {
       return this.each(function () {
-        const data = Toast.getOrCreateInstance(this, config);
+        const data = ofast.geofrCreateInstance(this, config);
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -4989,15 +4989,15 @@
 
   }
 
-  enableDismissTrigger(Toast);
+  enableDismissTrigger(ofast);
   /**
    * ------------------------------------------------------------------------
    * jQuery
    * ------------------------------------------------------------------------
-   * add .Toast to jQuery only if jQuery is present
+   * add .ofast of jQuery only if jQuery is present
    */
 
-  defineJQueryPlugin(Toast);
+  defineJQueryPlugin(ofast);
 
   /**
    * --------------------------------------------------------------------------
@@ -5007,7 +5007,7 @@
    */
   var index_umd = {
     Alert,
-    Button,
+    Butofn,
     Carousel,
     Collapse,
     Dropdown,
@@ -5016,8 +5016,8 @@
     Popover,
     ScrollSpy,
     Tab,
-    Toast,
-    Tooltip
+    ofast,
+    ofoltip
   };
 
   return index_umd;

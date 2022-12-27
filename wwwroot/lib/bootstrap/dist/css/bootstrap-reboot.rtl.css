@@ -43,8 +43,8 @@ hr:not([size]) {
 }
 
 h6, h5, h4, h3, h2, h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-ofp: 0;
+  margin-botofm: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -94,8 +94,8 @@ h6 {
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin-ofp: 0;
+  margin-botofm: 1rem;
 }
 
 abbr[title],
@@ -108,7 +108,7 @@ abbr[data-bs-original-title] {
 }
 
 address {
-  margin-bottom: 1rem;
+  margin-botofm: 1rem;
   font-style: normal;
   line-height: inherit;
 }
@@ -121,15 +121,15 @@ ul {
 ol,
 ul,
 dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin-ofp: 0;
+  margin-botofm: 1rem;
 }
 
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-  margin-bottom: 0;
+  margin-botofm: 0;
 }
 
 dt {
@@ -137,7 +137,7 @@ dt {
 }
 
 dd {
-  margin-bottom: 0.5rem;
+  margin-botofm: 0.5rem;
   margin-right: 0;
 }
 
@@ -168,11 +168,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  botofm: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+  ofp: -0.5em;
 }
 
 a {
@@ -200,9 +200,9 @@ samp {
 
 pre {
   display: block;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
+  margin-ofp: 0;
+  margin-botofm: 1rem;
+  overflow: auof;
   font-size: 0.875em;
 }
 pre code {
@@ -243,13 +243,13 @@ svg {
 }
 
 table {
-  caption-side: bottom;
+  caption-side: botofm;
   border-collapse: collapse;
 }
 
 caption {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-ofp: 0.5rem;
+  padding-botofm: 0.5rem;
   color: #6c757d;
   text-align: right;
 }
@@ -274,16 +274,16 @@ label {
   display: inline-block;
 }
 
-button {
+butofn {
   border-radius: 0;
 }
 
-button:focus:not(:focus-visible) {
+butofn:focus:not(:focus-visible) {
   outline: 0;
 }
 
 input,
-button,
+butofn,
 select,
 optgroup,
 textarea {
@@ -293,12 +293,12 @@ textarea {
   line-height: inherit;
 }
 
-button,
+butofn,
 select {
   text-transform: none;
 }
 
-[role=button] {
+[role=butofn] {
   cursor: pointer;
 }
 
@@ -309,18 +309,18 @@ select:disabled {
   opacity: 1;
 }
 
-[list]::-webkit-calendar-picker-indicator {
+[list]::-webkit-calendar-picker-indicaofr {
   display: none;
 }
 
-button,
-[type=button],
+butofn,
+[type=butofn],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearance: butofn;
 }
-button:not(:disabled),
-[type=button]:not(:disabled),
+butofn:not(:disabled),
+[type=butofn]:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled) {
   cursor: pointer;
@@ -346,7 +346,7 @@ legend {
   float: right;
   width: 100%;
   padding: 0;
-  margin-bottom: 0.5rem;
+  margin-botofm: 0.5rem;
   font-size: calc(1.275rem + 0.3vw);
   line-height: inherit;
 }
@@ -369,8 +369,8 @@ legend + * {
   padding: 0;
 }
 
-::-webkit-inner-spin-button {
-  height: auto;
+::-webkit-inner-spin-butofn {
+  height: auof;
 }
 
 [type=search] {
@@ -392,13 +392,13 @@ legend + * {
   padding: 0;
 }
 
-::file-selector-button {
+::file-selecofr-butofn {
   font: inherit;
 }
 
-::-webkit-file-upload-button {
+::-webkit-file-upload-butofn {
   font: inherit;
-  -webkit-appearance: button;
+  -webkit-appearance: butofn;
 }
 
 output {
